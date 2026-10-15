@@ -1,0 +1,7 @@
+VertexLitGeneric
+{
+	"$basetexture"	"models\props\de_inferno\tree_large_mip0"
+	"$alphatest" "1"
+	"$nocull" "1"
+
+}

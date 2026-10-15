@@ -1,0 +1,50 @@
+//SG550
+"Weapon_SG550.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"0.40"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/sg550/sg550-1.wav"
+}
+
+"Weapon_SG550.Clipout"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/sg550/sg550_clipout.wav" 
+}
+
+"Weapon_SG550.Clipin"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/sg550/sg550_clipin.wav" 
+}
+
+"Weapon_SG550.Boltpull"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/sg550/sg550_boltpull.wav" 
+}
+
+"Weapon_SG550.Deploy"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/sg550/sg550_draw.wav"
+}

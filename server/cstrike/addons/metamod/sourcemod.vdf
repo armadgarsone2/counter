@@ -1,0 +1,5 @@
+"Plugin"
+{
+	"name"	"SourceMod"
+	"file"	"addons/sourcemod/bin/sourcemod_mm"
+}

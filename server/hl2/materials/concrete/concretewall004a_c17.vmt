@@ -1,0 +1,11 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Concrete/concretewall004a"
+	"$surfaceprop" "concrete"
+	"%keywords" "c17sewers"
+	 
+	"LightmappedGeneric_DX9"
+	{
+		"$bumpmap" "concrete/concretewall004a_normal"
+	}
+}

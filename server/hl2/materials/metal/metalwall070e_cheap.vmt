@@ -1,0 +1,20 @@
+// envmaptint_fix
+"LightmappedGeneric"
+{
+	"$basetexture" "Metal/metalwall070e"
+	"$surfaceprop" "metal"
+	"%keywords" "c17industrial,wasteland"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 1
+	"$envmapsaturation" 1
+	"$envmaptint" "[ .56 .56 .56 ]"
+	"$FRESNELREFLECTION" .25
+
+
+	"LightmappedGeneric_DX9"
+	{
+		"$bumpmap" "Metal/metalwall070e_normal"
+	}
+
+}

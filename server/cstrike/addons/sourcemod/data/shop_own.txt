@@ -1,0 +1,3 @@
+"STEAM_ID_PENDING"
+{
+}

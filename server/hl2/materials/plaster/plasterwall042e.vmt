@@ -1,0 +1,13 @@
+// envmaptint_fix
+"LightmappedGeneric"
+{
+	"$basetexture" "Plaster/plasterwall042e"
+	"$surfaceprop" "plaster"
+	"%keywords" "c17downtown,wasteland"
+	"$bumpmap" "plaster/plasterwall042e_normal"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 1
+	"$envmapsaturation" 1
+	"$envmaptint" "[ .56 .56 .56 ]"
+}

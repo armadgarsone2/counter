@@ -1,0 +1,7 @@
+"unlitgeneric"
+{
+	"$additive" 1
+	"$basetexture" "_rt_SmallFB0"
+	"$ignorez" 1
+	"$nocull" 1
+}

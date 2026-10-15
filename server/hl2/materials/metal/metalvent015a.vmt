@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Metal/metalvent015a"
+	"$surfaceprop" "metalvent"
+	"%keywords" "c17industrial"
+	"$selfillum" 1
+}

@@ -1,0 +1,27 @@
+// envmaptint_fix
+"VertexLitGeneric"
+{
+	//"$basetexture" "models/props_combine/combine_barricade_tall02b"
+	//"$surfaceprop" "metal"
+	//"$envmap" "Environment Maps/envmapcombine"
+	//"$envmap" "env_cubemap"
+	//"$envmaptint" "[ .01 .01 .01 ]"
+	//"$basealphaenvmapmask" 1
+	//"$envmapmask" "models/props_combine/combine_cell001_mask"
+
+
+	"$baseTexture"	"models/props_combine/combine_tower01a"
+	"$surfaceprop" "metal"
+	"$bumpmap" "models/props_combine/combine_tower01a_normal"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 1
+	"$envmapsaturation" 1
+	"$envmaptint" "[ .56 .67 .75 ]"
+
+
+}
+
+
+
+

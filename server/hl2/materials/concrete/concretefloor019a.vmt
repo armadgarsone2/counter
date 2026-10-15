@@ -1,0 +1,15 @@
+// envmaptint_fix
+"LightmappedGeneric"
+{
+	"$basetexture" "Concrete/concretefloor019a"
+	"$surfaceprop" "concrete"
+	"%keywords" "c17downtown"
+	"$bumpmap" "concrete\concretefloor019a_normal"
+	"$normalmapalphaenvmapmask" 1
+	"$envmap" "env_cubemap"
+	"$envmapsaturation" 1
+	"$envmapcontrast" 1
+	"$envmaptint" "[ .56 .56 .56 ]"
+	"$parallaxmap" "concrete\concretefloor019a_height"
+	"$parallaxmapscale" ".1035"
+}

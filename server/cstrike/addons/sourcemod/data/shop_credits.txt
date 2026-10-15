@@ -1,0 +1,4 @@
+"STEAM_ID_PENDING"
+{
+	"credits"		"500"
+}

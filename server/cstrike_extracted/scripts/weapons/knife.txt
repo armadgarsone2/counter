@@ -1,0 +1,35 @@
+//KNIFE
+"Weapon_M9Bayonet.Deploy"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"			"100"
+
+	"wave"			"weapons/m9bayonet/m9bayonet_draw.wav"
+}
+
+"Weapon_HuntKnife.Slash"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"95,105"
+
+	"rndwave"
+	{
+		"wave" "weapons/huntknife/huntknife_slash1.wav"
+		"wave" "weapons/huntknife/huntknife_slash2.wav"
+		"wave" "weapons/huntknife/huntknife_slash3.wav"
+	}
+}
+
+"Weapon_HuntKnife.Stab"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"			"95,105"
+
+	"wave"  	"weapons/huntknife/huntknife_stab.wav"
+}

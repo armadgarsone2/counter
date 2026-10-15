@@ -1,0 +1,19 @@
+// envmaptint_fix
+"LightmappedGeneric"
+{
+	"$basetexture" "concrete\concretefloor033k"
+	"$surfaceprop" "concrete"
+	"%keywords" "c17downtown"
+
+	//"$fresnelreflection" 0.25
+
+	 "LightmappedGeneric_DX9"
+	{
+		"$envmap" "env_cubemap"
+		"$bumpmap" "concrete\concretefloor033k_normal"
+		"$envmapsaturation" 1
+		"$envmapcontrast" 1
+		"$envmaptint" "[ .25 .25 .25 ]"
+		"$normalmapalphaenvmapmask" 1
+	}
+}

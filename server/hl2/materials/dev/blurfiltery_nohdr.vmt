@@ -1,0 +1,5 @@
+"BlurFilterY"
+{
+	"$basetexture" "_rt_SmallFB1"
+	"%noToolTexture" 1
+}

@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Metal/metalwall102a"
+	"$surfaceprop" "metal"
+	"$selfillum" "1"
+
+}

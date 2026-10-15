@@ -1,0 +1,29 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\weapons\v_models\m9bayonet\v_m9bayonet"
+	"$bumpmap"      "models\weapons\v_models\m9bayonet\v_m9bayonet_normal"
+
+	"$envmap" "env_cubemap"
+        "$normalmapalphaenvmapmask" 1
+	"$envmaptint"		"[ 1.000000 1.000000 1.000000 ]"
+	"$envmapcontrast"	0.30000
+	"$envmapsaturation"	1.000000
+	"$envmapboost"		1.0000	
+		
+	"$rimlight"		1
+	"$rimlightexponent"	2.000000
+	"$rimlightboost"	0.2000000
+	"$rimlightcolorblend"	1.000000
+	"$rimmask"		0
+
+        "$surfaceprop" metal
+
+        //"$phong" 		 1   // [빛에 의한 실시간 빛 반사]
+        "$phongexponent" 	12   // [퐁의 양?]
+	"$phongboost"           36   // [명도효과]
+          $UseModelLight   1          
+	$usecharacterfog	1
+}
+
+
+

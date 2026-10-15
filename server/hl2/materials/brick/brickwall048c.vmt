@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Brick/brickwall048c"
+	"$surfaceprop" "brick"
+	"%keywords" "wasteland"
+	"$bumpmap" "Brick/brickwall048c_normal"
+	"$parallaxmap" "Brick/brickwall048c_height"
+	"$parallaxmapscale" ".005"
+}

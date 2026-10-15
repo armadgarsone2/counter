@@ -1,0 +1,70 @@
+//C4
+"c4.click1"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click1.wav"
+}
+
+"c4.click2"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click2.wav"
+}
+
+"c4.click3"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click3.wav"
+}
+
+"c4.click4"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click4.wav"
+}
+
+"c4.click5"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click5.wav"
+}
+
+"c4.click6"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click6.wav"
+}
+
+"c4.click7"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1"
+	"CompatibilityAttenuation"	"1.0"
+	
+
+	"wave"			"weapons/c4/c4_click7.wav"
+}

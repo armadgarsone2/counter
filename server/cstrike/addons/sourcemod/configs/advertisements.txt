@@ -1,0 +1,33 @@
+// Advertisements config for SourceMod "Advertisements" plugin
+// Put at: cstrike/addons/sourcemod/configs/advertisements.txt
+// Plugin: https://forums.alliedmods.net/showthread.php?t=155705
+// Colors: {DEFAULT} {GREEN} {LIGHTGREEN} {RED} {ORANGE} {BLUE} {OLIVE}
+
+"Advertisements"
+{
+    "1"
+    {
+        "type"      "C"
+        "text"      "{GREEN}💎 VIP سرور {DEFAULT}— noclip، godmode و همه اسلحه‌ها! {ORANGE}برای خرید به ادمین پیام بده"
+    }
+    "2"
+    {
+        "type"      "C"
+        "text"      "{LIGHTGREEN}📜 قوانین:{DEFAULT} فحاشی، چیت و اسپم میکروفون ممنوع!"
+    }
+    "3"
+    {
+        "type"      "C"
+        "text"      "{GREEN}🎮 منوی سرور:{DEFAULT} توی چت بنویس {ORANGE}!smenu"
+    }
+    "4"
+    {
+        "type"      "C"
+        "text"      "{LIGHTGREEN}⚡ تیک‌ریت 100{DEFAULT} — بهترین ریجستر تیر رو تجربه کن!"
+    }
+    "5"
+    {
+        "type"      "C"
+        "text"      "{GREEN}👥 دوستات رو دعوت کن!{DEFAULT} هرچی سرور شلوغ‌تر، بازی جذاب‌تر 🔫"
+    }
+}

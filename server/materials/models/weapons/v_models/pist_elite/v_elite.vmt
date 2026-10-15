@@ -1,0 +1,32 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\weapons\v_models\pist_elite\v_elite"
+
+	"$bumpmap" "models\weapons\v_models\pist_elite\v_elite_normal"
+
+	"$envmap" "env_cubemap"
+        "$normalmapalphaenvmapmask" 1
+	"$envmaptint"		"[ 0.500000 0.500000 0.500000 ]"
+	"$envmapcontrast"	0.50000
+	"$envmapsaturation"	0.500000
+	"$envmapboost"		1.0000	
+		
+	"$rimlight"		1
+	"$rimlightexponent"	2.000000
+	"$rimlightboost"	0.2000000
+	"$rimlightcolorblend"	1.000000
+	"$rimmask"		0
+
+        "$surfaceprop" metal
+
+        "$phong" 		 1   // [ºû¿¡ ÀÇÇÑ ½Ç½Ã°£ ºû ¹Ý»ç]
+        "$phongexponent" 	30   // [ÆþÀÇ ¾ç?]
+	"$phongboost"           20   // [¸íµµÈ¿°ú]
+	"$phongtint" "[ 0.25 0.25 0.25 ]"  //  [1(»¡°­).1(³ì»ö).1(ÆÄ¶û)] ÆþÀÇ ¹Ý»ç»öÁ¶¸¦ Á¶ÀýÇÑ´Ù.
+
+         $UseModelLight   1
+        "$diffusecontrast"  0.25
+		
+	$usecharacterfog	1
+}
+

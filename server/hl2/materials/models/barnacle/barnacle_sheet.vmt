@@ -1,0 +1,10 @@
+// envmaptint_fix
+"VertexLitGeneric"
+{
+	"$baseTexture" "models/barnacle/barnacle_sheet"	
+	"$bumpmap" "models/barnacle/barnacle_normal"	
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" ".7"
+	"$envmaptint" "[ .8 .69 .60 ]"
+}

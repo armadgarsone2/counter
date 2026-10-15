@@ -1,0 +1,14 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Concrete/concretefloor007a"
+	"$surfaceprop" "concrete"
+	"%keywords" "c17downtown"
+
+
+	 "LightmappedGeneric_DX9"
+	{
+		"$bumpmap" "concrete/concretefloor007a_normal"
+		"$parallaxmap" "concrete/concretefloor007a_height"
+		"$parallaxmapscale" ".05"
+	}
+}

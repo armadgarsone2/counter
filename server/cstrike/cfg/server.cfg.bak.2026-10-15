@@ -1,0 +1,29 @@
+// Sefidan CSS v34 — generated
+rcon_password "CHANGE_ME"
+hostname "Sefidan CSS | 100 Tick"
+sv_password ""
+sys_ticrate 100
+pingboost 3
+
+
+sv_voiceenable 1
+mp_autokick_immune 0
+sv_region 255
+sv_tags "v34,public,farsi"
+log_address ""
+exec gamemodes/public.cfg
+sv_lan 0
+sv_secure 0
+sv_pure 0
+
+sv_steamgroup ""
+sv_hibernate_when_empty 0
+
+// SMAC: client has no steam route on this no-steam server -> don't kick for auth
+smac_validate_auth 0
+
+// FastDL Configuration
+sv_downloadurl "http://3.128.226.176/cstrike/"
+sv_allowdownload 1
+sv_allowupload 0
+sv_consistency 1

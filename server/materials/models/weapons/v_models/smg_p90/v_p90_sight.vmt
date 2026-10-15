@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\weapons\v_models\smg_p90\v_p90_sight"
+	"$selfillum" "1"
+	"$additive" "1"
+	"$translucent"	"1"
+	//"$envmapmask" "models\weapons\v_models\smg_p90\v_p90_sight_ref"
+
+	"$rimlight"                1
+    "$rimlightboost"           0
+           
+	$usecharacterfog	1
+}

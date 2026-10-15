@@ -1,0 +1,23 @@
+# Build artifacts
+*.o
+*.pyc
+__pycache__/
+
+# Logs
+*.log
+*.log.*
+
+# SourceMod logs
+server/cstrike/addons/sourcemod/logs/
+
+# Temp / OS junk
+.DS_Store
+Thumbs.db
+*~
+*.tmp
+*.bak
+*.orig
+
+# Session files (private!)
+*.session
+*.session-journal
