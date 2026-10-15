@@ -1,0 +1,7 @@
+name: "css34_server"
+title: "CSS v34 Server Management"
+description: "Manage Ali's Counter-Strike: Source v34 dedicated server over SSH (Tailscale tunnel): connection setup, plugins, RCON, FastDL, backups, VIP system, and the hands-off Telegram selfbot."
+category: "Server administration"
+include_in_prompt: true
+skill_improvement:
+  managed: false
