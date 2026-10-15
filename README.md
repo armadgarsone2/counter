@@ -41,7 +41,9 @@ counter/
 │   │       └── configs/   ← کانفیگ پلاگین‌ها
 │   └── bin/               ← باینری‌های موتور
 └── tools/
-    └── css34.service      ← فایل سرویس systemd
+    └── css34.service
+skills/
+    └── css34-server/      ← فایل سرویس systemd
 ```
 
 ## راه‌اندازی سریع (۵ قدم)
