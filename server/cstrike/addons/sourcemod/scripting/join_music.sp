@@ -109,7 +109,7 @@ public Action Timer_PlayMusic(Handle timer, int userid)
         int pick = GetRandomInt(0, g_iTrackCount - 1);
         strcopy(g_sPlaying[client], PLATFORM_MAX_PATH, g_sTracks[pick]);
         EmitSoundToClient(client, g_sTracks[pick], SOUND_FROM_PLAYER, SNDCHAN_AUTO);
-        PrintToChat(client, "🎵 آهنگ ورود در حال پخشه — با \x04!music\x01 خاموشش کن");
+        PrintToChat(client, "🎵 ﻪﺸﺨﭘ ﻝﺎﺣ ﺭﺩ ﺩﻭﺭﻭ ﮓﻨﻫﺁ — ﺎﺑ \x04!music\x01 ﻦﮐ ﺶﺷﻮﻣﺎﺧ");
     }
     return Plugin_Stop;
 }
@@ -143,6 +143,6 @@ public Action Cmd_ToggleMusic(int client, int args)
         g_sPlaying[client][0] = '\0';
     }
 
-    PrintToChat(client, "🎵 آهنگ ورود: %s", g_bWantsMusic[client] ? "روشن ✅" : "خاموش ❌");
+    PrintToChat(client, "🎵 ﺩﻭﺭﻭ ﮓﻨﻫﺁ: %s", g_bWantsMusic[client] ? "ﻦﺷﻭﺭ ✅" : "ﺵﻮﻣﺎﺧ ❌");
     return Plugin_Handled;
 }

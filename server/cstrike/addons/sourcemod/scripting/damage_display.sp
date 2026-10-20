@@ -43,7 +43,7 @@ public Action Cmd_Toggle(int client, int args)
     if (client == 0)
         return Plugin_Handled;
     g_bDmg[client] = !g_bDmg[client];
-    PrintToChat(client, "🎯 نمایش دمیج: %s", g_bDmg[client] ? "روشن ✅" : "خاموش ❌");
+    PrintToChat(client, "🎯 ﺞﯿﻣﺩ ﺶﯾﺎﻤﻧ: %s", g_bDmg[client] ? "ﻦﺷﻭﺭ ✅" : "ﺵﻮﻣﺎﺧ ❌");
     return Plugin_Handled;
 }
 

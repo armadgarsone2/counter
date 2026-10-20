@@ -22,11 +22,11 @@
 
 // ---------------- edit your rules here ----------------
 char g_Rules[][] = {
-    "1. فحاشی و توهین به پلیرها ممنوع",
-    "2. چیت، اسکریپت و سوءاستفاده از باگ ممنوع",
-    "3. اسپم میکروفون و چت ممنوع",
-    "4. کمپ کردن پشت اسپاون حریف ممنوع",
-    "5. به ادمین‌ها احترام بذار"
+    "1. ﻉﻮﻨﻤﻣ ﺎﻫﺮﯿﻠﭘ ﻪﺑ ﻦﯿﻫﻮﺗ ﻭ ﯽﺷﺎﺤﻓ",
+    "2. ﻉﻮﻨﻤﻣ ﮒﺎﺑ ﺯﺍ ﻩﺩﺎﻔﺘﺳﺍﺀﻮﺳ ﻭ ﺖﭙﯾﺮﮑﺳﺍ ،ﺖﯿﭼ",
+    "3. ﻉﻮﻨﻤﻣ ﺖﭼ ﻭ ﻥﻮﻓﻭﺮﮑﯿﻣ ﻢﭙﺳﺍ",
+    "4. ﻉﻮﻨﻤﻣ ﻒﯾﺮﺣ ﻥﻭﺎﭙﺳﺍ ﺖﺸﭘ ﻥﺩﺮﮐ ﭗﻤﮐ",
+    "5. ﺭﺍﺬﺑ ﻡﺍﺮﺘﺣﺍ ﺎﻫﻦﯿﻣﺩﺍ ﻪﺑ"
 };
 // ------------------------------------------------------
 
@@ -36,7 +36,7 @@ public Plugin myinfo =
 {
     name        = "Server Menu",
     author      = "Server Owner",
-    description = "Cool in-game server menu: VIP shop, rules, info",
+    description = "Cool in-game server menu: rules, info, VIP commands",
     version     = "1.0.0",
     url         = ""
 };
@@ -63,7 +63,7 @@ public Action Timer_Welcome(Handle timer, int userid)
     {
         char tag[32];
         g_cvTag.GetString(tag, sizeof(tag));
-        PrintToChat(client, "%s برای دیدن منوی سرور توی چت بنویس: \x04!smenu", tag);
+        PrintToChat(client, "%s ﺲﯾﻮﻨﺑ ﺖﭼ ﯼﻮﺗ ﺭﻭﺮﺳ ﯼﻮﻨﻣ ﻥﺪﯾﺩ ﯼﺍﺮﺑ: \x04!smenu", tag);
     }
     return Plugin_Stop;
 }
@@ -83,14 +83,13 @@ public Action Cmd_Menu(int client, int args)
 void ShowMainMenu(int client)
 {
     Menu menu = new Menu(MainMenuHandler);
-    menu.SetTitle("🎮 منوی سرور\n ");
-    menu.AddItem("vip",   "💎 خرید VIP");
-    menu.AddItem("rules", "📜 قوانین سرور");
+    menu.SetTitle("🎮 ﺭﻭﺮﺳ ﯼﻮﻨﻣ\n ");
+    menu.AddItem("rules", "📜 ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ");
 
     if (CheckCommandAccess(client, "sm_menu_vip", ADMFLAG_CUSTOM1))
-        menu.AddItem("vipcmds", "⚡ دستورات VIP");
+        menu.AddItem("vipcmds", "⚡ ﺕﺍﺭﻮﺘﺳﺩ VIP");
 
-    menu.AddItem("info", "ℹ️ اطلاعات سرور");
+    menu.AddItem("info", "ℹ️ ﺭﻭﺮﺳ ﺕﺎﻋﻼﻃﺍ");
     menu.ExitButton = true;
     menu.Display(client, 30);
 }
@@ -124,19 +123,18 @@ void ShowVipInfo(int client)
     char tag[32];
     g_cvTag.GetString(tag, sizeof(tag));
 
-    PrintToChat(client, "%s 💎 \x04VIP سرور", tag);
-    PrintToChat(client, "%s امکانات:", tag);
-    PrintToChat(client, "  ✈️  noclip با دستور \x04!vn", tag);
-    PrintToChat(client, "  🛡️  godmode با دستور \x04!vg", tag);
-    PrintToChat(client, "  🔫  همه‌ی اسلحه‌ها با دستور \x04!vw", tag);
-    PrintToChat(client, "%s 📩 برای خرید VIP به ادمین سرور پیام بده", tag);
+    PrintToChat(client, "%s 💎 \x04VIP ﺭﻭﺮﺳ", tag);
+    PrintToChat(client, "%s ﺕﺎﻧﺎﮑﻣﺍ:", tag);
+    PrintToChat(client, "  ✈️  noclip ﺭﻮﺘﺳﺩ ﺎﺑ \x04!vn", tag);
+    PrintToChat(client, "  🛡️  godmode ﺭﻮﺘﺳﺩ ﺎﺑ \x04!vg", tag);
+    PrintToChat(client, "  🔫  ﺭﻮﺘﺳﺩ ﺎﺑ ﺎﻫﻪﺤﻠﺳﺍ ﯼﻪﻤﻫ \x04!vw", tag);
 }
 
 // ---------------- rules ----------------
 void ShowRules(int client)
 {
     Menu menu = new Menu(SubMenuHandler);
-    menu.SetTitle("📜 قوانین سرور\n ");
+    menu.SetTitle("📜 ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ\n ");
 
     char item[128];
     for (int i = 0; i < sizeof(g_Rules); i++)
@@ -145,7 +143,7 @@ void ShowRules(int client)
         menu.AddItem("", item, ITEMDRAW_DISABLED);
     }
 
-    menu.AddItem("back", "🔙 بازگشت");
+    menu.AddItem("back", "🔙 ﺖﺸﮔﺯﺎﺑ");
     menu.ExitButton = false;
     menu.Display(client, 30);
 }
@@ -154,13 +152,13 @@ void ShowRules(int client)
 void ShowVipCmds(int client)
 {
     Menu menu = new Menu(SubMenuHandler);
-    menu.SetTitle("⚡ دستورات VIP\n ");
+    menu.SetTitle("⚡ ﺕﺍﺭﻮﺘﺳﺩ VIP\n ");
 
-    menu.AddItem("", "!vn  (یا sm_vn) — روشن/خاموش noclip", ITEMDRAW_DISABLED);
-    menu.AddItem("", "!vg  (یا sm_vg) — روشن/خاموش godmode", ITEMDRAW_DISABLED);
-    menu.AddItem("", "!vw  (یا sm_vw) — گرفتن همه‌ی اسلحه‌ها", ITEMDRAW_DISABLED);
+    menu.AddItem("", "!vn  (ﺎﯾ sm_vn) — ﻦﺷﻭﺭ/ﺵﻮﻣﺎﺧ noclip", ITEMDRAW_DISABLED);
+    menu.AddItem("", "!vg  (ﺎﯾ sm_vg) — ﻦﺷﻭﺭ/ﺵﻮﻣﺎﺧ godmode", ITEMDRAW_DISABLED);
+    menu.AddItem("", "!vw  (ﺎﯾ sm_vw) — ﺎﻫﻪﺤﻠﺳﺍ ﯼﻪﻤﻫ ﻦﺘﻓﺮﮔ", ITEMDRAW_DISABLED);
 
-    menu.AddItem("back", "🔙 بازگشت");
+    menu.AddItem("back", "🔙 ﺖﺸﮔﺯﺎﺑ");
     menu.ExitButton = false;
     menu.Display(client, 30);
 }
@@ -177,12 +175,12 @@ void ShowInfo(int client)
         if (IsClientInGame(i) && !IsFakeClient(i))
             players++;
 
-    PrintToChat(client, "%s ℹ️ مپ فعلی: \x04%s", tag, map);
-    PrintToChat(client, "%s 👥 پلیرها: \x04%d\x01 از %d", tag, players, max);
+    PrintToChat(client, "%s ℹ️ ﯽﻠﻌﻓ ﭗﻣ: \x04%s", tag, map);
+    PrintToChat(client, "%s 👥 ﺎﻫﺮﯿﻠﭘ: \x04%d\x01 ﺯﺍ %d", tag, players, max);
 
     int timeleft;
     if (GetMapTimeLeft(timeleft) && timeleft > 0)
-        PrintToChat(client, "%s ⏱️ زمان باقی‌مانده مپ: \x04%d\x01 دقیقه", tag, timeleft / 60);
+        PrintToChat(client, "%s ⏱️ ﭗﻣ ﻩﺪﻧﺎﻣﯽﻗﺎﺑ ﻥﺎﻣﺯ: \x04%d\x01 ﻪﻘﯿﻗﺩ", tag, timeleft / 60);
 }
 
 public int SubMenuHandler(Menu menu, MenuAction action, int client, int item)

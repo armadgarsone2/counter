@@ -40,7 +40,7 @@ public Action Timer_AnnounceJoin(Handle timer, int userid)
 {
     int client = GetClientOfUserId(userid);
     if (client > 0 && IsClientInGame(client) && !IsFakeClient(client))
-        PrintToChatAll("\x03%N \x04وارد سرور شد 👋", client);
+        PrintToChatAll("\x03%N \x04ﺪﺷ ﺭﻭﺮﺳ ﺩﺭﺍﻭ 👋", client);
     return Plugin_Stop;
 }
 
@@ -50,5 +50,5 @@ public void OnClientDisconnect(int client)
         return;
     char name[MAX_NAME_LENGTH];
     GetClientName(client, name, sizeof(name));
-    PrintToChatAll("\x03%s \x01از سرور خارج شد", name);
+    PrintToChatAll("\x03%s \x01ﺪﺷ ﺝﺭﺎﺧ ﺭﻭﺮﺳ ﺯﺍ", name);
 }

@@ -201,7 +201,7 @@ public void OnRankResult(Database db, DBResultSet results, const char[] error, i
     if (results != null && results.FetchRow())
         rank = results.FetchInt(0);
     float kd = g_iDeaths[client] > 0 ? float(g_iKills[client]) / float(g_iDeaths[client]) : float(g_iKills[client]);
-    PrintToChat(client, "\x04🏆 رتبه‌ی شما: #%d \x01| امتیاز: \x03%d \x01| کیل: \x03%d \x01| دث: \x03%d \x01| K/D: \x03%.2f",
+    PrintToChat(client, "\x04🏆 ﺎﻤﺷ ﯼﻪﺒﺗﺭ: #%d \x01| ﺯﺎﯿﺘﻣﺍ: \x03%d \x01| ﻞﯿﮐ: \x03%d \x01| ﺙﺩ: \x03%d \x01| K/D: \x03%.2f",
         rank, g_iPoints[client], g_iKills[client], g_iDeaths[client], kd);
 }
 
