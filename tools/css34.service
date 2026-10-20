@@ -8,7 +8,7 @@ User=root
 # Adjust the path to where you cloned this repo:
 WorkingDirectory=/opt/counter/server
 Environment="LD_LIBRARY_PATH=/opt/counter/server:/opt/counter/server/bin"
-ExecStart=/opt/counter/server/srcds_i486 -game cstrike -console -usercon -nobreakpad -insecure +ip 0.0.0.0 +port 27015 +maxplayers 32 +map de_dust2 +sv_downloadurl "http://YOUR_SERVER_IP/cstrike/" +sv_allowdownload 1
+ExecStart=/opt/counter/server/srcds_i486 -game cstrike -console -usercon -nobreakpad -insecure +ip 0.0.0.0 +port 27015 +maxplayers 32 +map de_dust2 +sv_downloadurl "http://13.53.151.178/cstrike/" +sv_allowdownload 1
 Restart=always
 RestartSec=5
 

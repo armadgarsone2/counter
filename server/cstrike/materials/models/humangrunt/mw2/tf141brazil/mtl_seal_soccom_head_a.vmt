@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\tf141brazil\mtl_seal_soccom_head_a"
+    "$bumpmap"    "Models\humangrunt\mw2\tf141brazil\mtl_seal_soccom_head_a_nml"
+    "$phongexponenttexture"    "Models\humangrunt\mw2\tf141brazil\mtl_seal_soccom_head_a_spec"
+	"$phong" "1"
+//	"$phongexponent" "5"
+	"$phongalbedotint" "1"
+	"$phongboost" "0.1"
+	"$phongfresnelranges"	"[.5 1 48]"
+//	$translucent 1
+}
+
+

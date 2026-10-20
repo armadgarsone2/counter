@@ -1,0 +1,18 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\tf141brazil\mtl_brown_eye"
+	"$bumpmap" "Models\humangrunt\mw2\tf141brazil\normalmap_flat"
+	"$phong" "1"
+//	"$phongexponent" "5"
+	"$phongalbedotint" "1"
+	"$phongboost" ".3"
+	"$phongfresnelranges"	"[.5 1 48]"
+//	$translucent 1
+
+	"$rimlight" "1"										
+	"$rimlightexponent" "20"							
+	"$rimlightboost" "0.3"
+	$phongexponenttexture "Models\humangrunt\mw2\tf141brazil\mtl_brown_eye_spec"
+}
+
+

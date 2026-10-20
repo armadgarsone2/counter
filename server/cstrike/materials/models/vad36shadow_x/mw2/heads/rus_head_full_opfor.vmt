@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/ninja/mw2/heads/rus_head_full_opfor"
+	"$bumpmap" "models/ninja/mw2/heads/rus_head_full_nml"
+
+	"$phong" "1"
+	"$phongexponent" 11
+	"$phongboost" ".2"
+	"$phongfresnelranges"	"[5 6 8]"
+	"$PhongAlbedoTint" "1"
+	"$phongexponenttexture" "models\ninja/mw2/heads/rus_head_full_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+}

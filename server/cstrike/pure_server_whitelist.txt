@@ -1,0 +1,10 @@
+whitelist
+{
+	// Force clients to use the server files (CRC must match server).
+	materials\models\player\...    trusted_source
+	materials\models\weapons\...   trusted_source
+	models\player\...                 trusted_source
+	models\weapons\...                trusted_source
+	sound\quake\...                   trusted_source
+	sound\weapons\...                 trusted_source
+}

@@ -1,6 +1,4 @@
 // Advertisements config for SourceMod "Advertisements" plugin
-// Put at: cstrike/addons/sourcemod/configs/advertisements.txt
-// Plugin: https://forums.alliedmods.net/showthread.php?t=155705
 // Colors: {DEFAULT} {GREEN} {LIGHTGREEN} {RED} {ORANGE} {BLUE} {OLIVE}
 
 "Advertisements"
@@ -8,26 +6,26 @@
     "1"
     {
         "type"      "C"
-        "text"      "{GREEN}💎 VIP سرور {DEFAULT}— noclip، godmode و همه اسلحه‌ها! {ORANGE}برای خرید به ادمین پیام بده"
+        "text"      "{GREEN}Welcome to the Wh1Tes server!{DEFAULT} Type {ORANGE}!smenu{DEFAULT} for the server menu"
     }
     "2"
     {
         "type"      "C"
-        "text"      "{LIGHTGREEN}📜 قوانین:{DEFAULT} فحاشی، چیت و اسپم میکروفون ممنوع!"
+        "text"      "{LIGHTGREEN}Server rules:{DEFAULT} no cheating, no mic spam, no trash talk!"
     }
     "3"
     {
         "type"      "C"
-        "text"      "{GREEN}🎮 منوی سرور:{DEFAULT} توی چت بنویس {ORANGE}!smenu"
+        "text"      "{GREEN}Tickrate 100{DEFAULT} -- the best hit registration experience!"
     }
     "4"
     {
         "type"      "C"
-        "text"      "{LIGHTGREEN}⚡ تیک‌ریت 100{DEFAULT} — بهترین ریجستر تیر رو تجربه کن!"
+        "text"      "{LIGHTGREEN}Invite your friends!{DEFAULT} The more players, the more fun"
     }
     "5"
     {
         "type"      "C"
-        "text"      "{GREEN}👥 دوستات رو دعوت کن!{DEFAULT} هرچی سرور شلوغ‌تر، بازی جذاب‌تر 🔫"
+        "text"      "{ORANGE}Fast download enabled{DEFAULT} -- custom skins load automatically"
     }
 }

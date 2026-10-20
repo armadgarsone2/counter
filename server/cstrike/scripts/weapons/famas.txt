@@ -1,45 +1,3 @@
-//FAMAS
-"Weapon_FAMAS.Single"
-{
-	"channel"		"CHAN_WEAPON"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"0.48"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/famas/famas-1.wav"
-	
-}
-
-"Weapon_FAMAS.Clipout"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/famas/famas_clipout.wav"
-}
-
-"Weapon_FAMAS.Clipin"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/famas/famas_clipin.wav"
-}
-
-"Weapon_FAMAS.Forearm"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/famas/famas_forearm.wav"
-}
-
 "Weapon_FAMAS.Deploy"
 {
 	"channel"		"CHAN_ITEM"
@@ -47,5 +5,16 @@
 	"CompatibilityAttenuation"	"1.0"
 	"pitch"		"PITCH_NORM"
 
-	"wave"			"weapons/famas/famas_draw.wav"
+	"wave"			"weapons/famas/famas_deploy.wav"
 }
+
+"Weapon_FAMAS.Boltpull"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/famas/famas_boltpull.wav"
+}
+

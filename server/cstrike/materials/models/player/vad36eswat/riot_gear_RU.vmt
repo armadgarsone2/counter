@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\player\vad36eswat\riot_gear_RU"
+  	"$bumpmap" "models\player/vad36eswat\riot_gear_n"	
+	"$alphatest" "1" "$translucent" "1" 
+	"$phong" "1"
+	"$phongexponent" "94.8"
+	"$phongboost"	"0.5"
+	"$phongfresnelranges" "[0.2 .5 10]"							
+}

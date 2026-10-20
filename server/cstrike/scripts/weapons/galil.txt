@@ -1,46 +1,24 @@
-//GALIL
-"Weapon_Galil.Single"
-{
-	"channel"		"CHAN_WEAPON"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"0.48"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/galil/galil-1.wav"
-	
-}
-
-"Weapon_Galil.Clipout"
+"Weapon_Galil.Boltpull2"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
 	"CompatibilityAttenuation"	"1.0"
 	"pitch"		"PITCH_NORM"
 
-	"wave"			"weapons/galil/galil_clipout.wav" 
+	"wave"			"weapons/galil/galil_boltpull2.wav"
 }
 
-"Weapon_Galil.Clipin"
+"Weapon_Galil.Draw2"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
 	"CompatibilityAttenuation"	"1.0"
 	"pitch"		"PITCH_NORM"
 
-	"wave"			"weapons/galil/galil_clipin.wav" 
+	"wave"			"weapons/galil/galil_draw2.wav"
 }
 
-"Weapon_Galil.Boltpull"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/galil/galil_boltpull.wav" 
-}
-
-"Weapon_Galil.Deploy"
+"Weapon_Galil.Draw"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
@@ -49,3 +27,4 @@
 
 	"wave"			"weapons/galil/galil_draw.wav"
 }
+

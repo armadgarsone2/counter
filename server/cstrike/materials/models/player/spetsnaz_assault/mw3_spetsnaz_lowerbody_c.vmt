@@ -1,0 +1,19 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/spetsnaz_assault/mw3_spetsnaz_lowerbody_c"
+	"$bumpmap" "models/player/spetsnaz_assault/mw3_spetsnaz_lowerbody_n"
+	"$phong" "1"
+	"$phongboost" "2"	
+	"$phongfresnelranges"	"[0.04 0.10 0.10]"
+	"$phongexponent" "6"
+	"$phongexponenttexture" "models/player/spetsnaz_assault/mw3_spetsnaz_lowerbody_s"
+	"$phongalbedotint" "1"
+	//"$halflambert" "1"
+	//"$selfillum" "1"
+	//"$selfillumtint" [0 0 0]" //"[1 0.9 0.55]"
+
+	"$rimlight" "0"	
+	"$rimlightexponent" "12"	
+	"$rimlightboost" "0.3"
+	$nocull 1
+}

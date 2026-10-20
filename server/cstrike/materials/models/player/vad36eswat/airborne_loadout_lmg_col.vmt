@@ -1,0 +1,12 @@
+VertexLitGeneric
+{
+	"$basetexture"	"models\player\vad36eswat\airborne_loadout_lmg_col"
+        "$bumpmap" "models\player\vad36eswat\airborne_loadout_lmg_nml"
+
+
+	"$normalmapalphaenvmapmask" "1"
+	"$envmapcontrast" 0.3
+	"$envmapsaturation" 0.7
+	"$envmaptint" "[ 0.36 0.36 0.36 ]"
+
+}

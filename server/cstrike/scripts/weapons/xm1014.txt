@@ -1,25 +1,4 @@
-//XM1014
-"Weapon_XM1014.Single"
-{
-	"channel"		"CHAN_WEAPON"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"0.52"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/xm1014/xm1014-1.wav"
-}
-
-"Weapon_XM1014.InsertShell"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/xm1014/xm1014_insertshell.wav"
-}
-
-"Weapon_XM1014.Deploy"
+"Weapon_XM1014.Draw"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
@@ -27,4 +6,24 @@
 	"pitch"		"PITCH_NORM"
 
 	"wave"			"weapons/xm1014/xm1014_draw.wav"
+}
+
+"Weapon_XM1014.Reload1"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/xm1014/xm1014_reload1.wav"
+}
+
+"Weapon_XM1014.Reload2"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"1.0"
+	"pitch"		"PITCH_NORM"
+
+	"wave"			"weapons/xm1014/xm1014_reload2.wav"
 }

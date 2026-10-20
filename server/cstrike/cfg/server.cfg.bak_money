@@ -1,0 +1,41 @@
+// Sefidan CSS v34 — generated
+rcon_password "2ce5226db93bb0b7545b"
+hostname "ﻥﺍﺪﯿﻔﺳ | Wh1Tes"
+sv_password ""
+sys_ticrate 100
+pingboost 3
+
+
+sv_voiceenable 1
+mp_autokick_immune 0
+sv_region 255
+sv_tags "v34,public,farsi"
+log_address ""
+exec gamemodes/public.cfg
+sv_lan 0
+sv_secure 0
+sv_pure 1
+
+sv_steamgroup ""
+sv_hibernate_when_empty 0
+
+// SMAC: client has no steam route on this no-steam server -> don't kick for auth
+smac_validate_auth 0
+
+// FastDL Configuration
+sv_downloadurl "http://13.53.151.178/cstrike/"
+sv_allowdownload 1
+sv_allowupload 0
+sv_consistency 1
+
+// ==== Performance tuning added 2026-10-15 ====
+sv_maxrate 30000
+sv_minrate 10000
+sv_maxupdaterate 100
+sv_minupdaterate 20
+sv_maxcmdrate 100
+sv_mincmdrate 20
+sv_unlag 1
+sv_maxunlag 1.0
+fps_max 600
+sv_loadingurl "http://13.53.151.178/cstrike/loading.html"

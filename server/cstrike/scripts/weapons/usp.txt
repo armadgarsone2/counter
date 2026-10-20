@@ -1,120 +1,20 @@
-//USP
-"Weapon_USP.Single"
+"Weapon_USP.Silencer_off"
 {
-	"channel"		"CHAN_WEAPON"
+	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
-	"CompatibilityAttenuation"	"ATTN_NORM"
+	"CompatibilityAttenuation"	"1.0"
 	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/usp/usp_unsil-1.wav"
-}
-
-"Weapon_USP.SilencedShot"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"ATTN_IDLE"
-	"pitch"		"PITCH_NORM"
-	
-	"wave"			"weapons/usp/usp1.wav"
-	
-}
-
-"Weapon_USP.SpinSoft"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"100"
-
-	"wave"			"weapons/usp/usp_Spin_Soft.wav"
-	
-}
-
-"Weapon_USP.SpinHard"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"100"
-
-	"wave"			"weapons/usp/usp_Spin_Hard.wav"
-	
-}
-
-"Weapon_USP.DetachSilencer"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
 
 	"wave"			"weapons/usp/usp_silencer_off.wav"
-	
 }
 
-"Weapon_USP.AttachSilencer"
+"Weapon_USP.Silencer_on"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
 	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
+	"pitch"		"PITCH_NORM"
 
 	"wave"			"weapons/usp/usp_silencer_on.wav"
-	
 }
 
-"Weapon_USP.Clipout"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/usp/usp_clipout.wav"
-	
-}
-
-"Weapon_USP.Clipin"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/usp/usp_clipin.wav"
-	
-}
-
-"Weapon_USP.Sliderelease"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/usp/usp_sliderelease.wav"
-	
-}
-
-"Weapon_USP.Slideback"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/usp/usp_slideback.wav"
-	
-}
-
-"Weapon_USP.Slideback2"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/usp/usp_slideback2.wav"
-	
-}

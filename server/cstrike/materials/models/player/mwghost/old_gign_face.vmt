@@ -1,0 +1,17 @@
+VertexLitGeneric
+{
+	"$basetexture" "models\player\mwghost\gign_face"
+	//"$envmap" "env_cubemap"
+	"$bumpmap" "models/player/mwghost\old_gign_face_normal"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 0.3
+	"$envmapsaturation" 0.7
+	"$envmaptint" "[ 0.36 0.36 0.36 ]"
+	"$phong" "1"
+
+	"$phongexponent" 13.21
+	"$phongboost" "0.2"	
+	"$phongfresnelranges"	"[.15 1.05 4.65]"
+	"$phongexponenttexture" "models\player\mwghost\old_gign_face_exp"
+	"$phongalbedotint" "1"
+}

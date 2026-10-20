@@ -1,0 +1,29 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\tf141brazil\mtl_us_army_alpha_b"
+	"$bumpmap" "Models\humangrunt\mw2\tf141brazil\mtl_us_army_alpha_b_nml"
+	"$phongexponenttexture"    "Models\humangrunt\mw2\tf141brazil\mtl_us_army_alpha_b_spec"
+
+	"$nocull" "0"
+	"$model" "1"
+	"$halflambert" "0"
+
+	"$alphatest" "0"
+	"$translucent" "1"
+
+	"$ambientocclusion" "1"
+
+	"$diffuseexp" "1"
+
+	"$phong" "1"
+	"$phongboost" "0.5"
+	"$phongexponent" "5"
+	"$phongfresnelranges"	"[ 0.5 0.75 1.5 ]"
+	"$phongalbedotint" "1"
+
+	$phongtint "[ 0.85 0.85 0.85 ]"
+
+	"$rimlight" "0"		
+	"$rimlightexponent" "25"
+	"$rimlightboost" "0.15"
+}

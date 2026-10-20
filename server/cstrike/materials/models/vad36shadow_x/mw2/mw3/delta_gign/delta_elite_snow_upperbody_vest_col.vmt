@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	"$no_draw" "1"
+	"$nodecal" "1"
+	"$baseTexture" "models\ninja/mw2/mw3/delta/delta_elite_snow_upperbody_vest_col"
+	"$bumpmap"    "models\ninja/mw2/mw3/delta/delta_elite_snow_upperbody_vest_nml"
+	
+	"$phongexponent" "5"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.25"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/mw3/delta/delta_elite_snow_upperbody_vest_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+}
+
+

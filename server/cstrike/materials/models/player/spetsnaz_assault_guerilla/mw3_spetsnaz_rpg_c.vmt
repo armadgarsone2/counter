@@ -1,0 +1,13 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/spetsnaz_assault/mw3_spetsnaz_rpg_c"
+	"$bumpmap" "models/player/spetsnaz_assault/mw3_spetsnaz_rpg_n"
+	"$phong" "1"
+	"$phongboost" "0.6"		
+	"$phongfresnelranges"	"[1 3 5]"
+//	"$phongexponent" "6"
+	"$phongexponenttexture" "models/player/spetsnaz_assault/mw3_spetsnaz_rpg_s"	
+	"$rimlight" "0"
+	"$rimlightexponent" "60"
+	"$rimlightboost" "1"
+}

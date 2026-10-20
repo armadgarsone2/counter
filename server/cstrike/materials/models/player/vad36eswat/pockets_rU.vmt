@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\player\vad36eswat\pockets_rU"
+  	"$bumpmap" "models\player/vad36eswat\pockets_r_norm"	
+ 	"$phong" "1"
+	"$phongexponent" "94.8"
+	"$phongboost"	"0.5"
+	"$phongfresnelranges" "[0.2 .5 10]"							
+}

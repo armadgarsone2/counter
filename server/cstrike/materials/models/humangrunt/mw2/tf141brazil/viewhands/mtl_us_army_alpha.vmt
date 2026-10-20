@@ -1,0 +1,20 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\tf141brazil\viewhands\mtl_us_army_alpha"
+    "$bumpmap"    "Models\humangrunt\mw2\tf141brazil\viewhands\mtl_us_army_alpha_n"
+	"$phong" "1"
+	"$phongalbedotint" "1"
+	$translucent 1
+
+	"$rimlight" "1"										
+	"$rimlightexponent" "20"							
+	"$rimlightboost" "0.3"
+	$phongexponenttexture "Models\humangrunt\mw2\tf141brazil\viewhands\mtl_us_army_alpha_s"
+	
+	"$phongexponent" "1"
+	"$phongboost" "2"	
+	"$phongfresnelranges"	"[0.2 0.2 0.2]"
+	"$halflambert" "1"
+}
+
+

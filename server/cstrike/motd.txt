@@ -1,60 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8">
+<html><head><meta charset="utf-8">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:#0d1117; color:#e6e6e6;
-    font-family:Tahoma, Arial, sans-serif;
-    display:flex; align-items:center; justify-content:center;
-    min-height:100vh; padding:20px;
-  }
-  .card {
-    background:linear-gradient(145deg,#161b22,#1c2330);
-    border:1px solid #f0a50055; border-radius:16px;
-    max-width:560px; width:100%; padding:36px;
-    text-align:center; box-shadow:0 10px 40px #000a;
-  }
-  h1 { color:#f0a500; font-size:28px; margin-bottom:6px; }
-  .sub { color:#8b949e; font-size:14px; margin-bottom:24px; }
-  .vip {
-    background:#f0a50018; border:1px solid #f0a50066;
-    border-radius:12px; padding:16px; margin-bottom:20px;
-  }
-  .vip h2 { color:#f0a500; font-size:18px; margin-bottom:8px; }
-  .vip p { font-size:14px; line-height:1.9; color:#d6d6d6; }
-  .vip .bot { color:#58a6ff; font-weight:bold; }
-  .rules { text-align:right; font-size:13px; color:#9aa4b2; line-height:2; }
-  .rules b { color:#e6e6e6; }
-  .btn {
-    display:inline-block; margin-top:22px; padding:12px 34px;
-    background:#f0a500; color:#111; border-radius:10px;
-    font-weight:bold; font-size:15px; text-decoration:none;
-  }
-  .foot { margin-top:18px; font-size:12px; color:#6e7681; }
-</style>
-</head>
-<body>
-<div class="card">
-  <h1>🎮 خوش اومدی به Sefidan CSS!</h1>
-  <div class="sub">Counter-Strike: Source • v34 • تیک‌ریت 100</div>
-
-  <div class="vip">
-    <h2>💎 VIP سرور</h2>
-    <p>
-      ✈️ noclip &nbsp;•&nbsp; 🛡️ godmode &nbsp;•&nbsp; 🔫 همه‌ی اسلحه‌ها<br>
-      📩 برای خرید به ادمین سرور پیام بده
-    </p>
-  </div>
-
-  <div class="rules">
-    <b>📜 قوانین:</b><br>
-    ۱. فحاشی ممنوع &nbsp; ۲. چیت ممنوع<br>
-    ۳. اسپم میکروفون ممنوع &nbsp; ۴. احترام به ادمین‌ها
-  </div>
-
-  <div class="foot">برای بستن این صفحه دکمه OK رو بزن و برو تو بازی 🔫</div>
-</div>
-</body>
+  *{margin:0;padding:0}
+  html,body{width:100%;height:100%;background:#000;overflow:hidden}
+  img{width:100vw;height:100vh;object-fit:cover;display:block}
+</style></head>
+<body><img src="http://13.53.151.178/cstrike/banner.jpg"></body>
 </html>

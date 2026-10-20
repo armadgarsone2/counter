@@ -1,0 +1,10 @@
+vertexlitgeneric
+{
+$baseTexture "models\player\vad36eswat\c_rus_spet_mp_armor_c"
+$bumpmap "models\player\vad36eswat\c_rus_spet_mp_armor_n"
+ 	"$phong" "1"
+	"$phongexponent" "20"
+	"$phongboost" ".3"	
+	"$phongfresnelranges"	"[.1 0.2 1]"
+	"$halflambert" "1"
+}

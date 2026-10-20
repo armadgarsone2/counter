@@ -1,0 +1,15 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\ninja/mw2/mw3/tankers/tank_load_outs_b_col"
+	"$bumpmap"    "models\ninja/mw2/mw3/tankers/tank_load_outs_b_nml"
+	
+	"$phongexponent" "5"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.2"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/mw3/tankers/tank_load_outs_b_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+}
+
+

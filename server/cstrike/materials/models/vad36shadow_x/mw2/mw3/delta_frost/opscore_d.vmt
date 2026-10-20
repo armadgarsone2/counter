@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\ddok1994\spec_sniper\opscore_d"
+	"$bumpmap" "models\ddok1994\spec_sniper\opscore_helmetcover_n"
+"$phong" "1"
+"$phongboost" "0.8"		
+	"$phongfresnelranges"	"[0.1 2.6 17]"
+"$phongexponent" "16"
+"$phongalbedotint" "1"
+}

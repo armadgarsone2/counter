@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models/player/vad36airborne/altyn"
+        "$bumpmap" "models/player/vad36airborne/altyn_n"
+}

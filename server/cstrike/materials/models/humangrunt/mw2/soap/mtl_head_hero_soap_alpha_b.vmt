@@ -1,0 +1,20 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\soap\mtl_head_hero_soap_alpha_b"
+    "$bumpmap"    "Models\humangrunt\mw2\soap\mtl_head_hero_soap_alpha_b_n"
+	$phongexponenttexture "Models\humangrunt\mw2\soap\mtl_head_hero_soap_alpha_b_s"
+	"$phong" "1"
+	"$phongalbedotint" "1"
+	$translucent 1
+
+	"$rimlight" "1"										
+	"$rimlightexponent" "20"							
+	"$rimlightboost" "0.3"
+	
+	"$phongexponent" "5"
+	"$phongboost" "0.5"	
+	"$phongfresnelranges"	"[1 1 1]"
+	"$halflambert" "1"
+}
+
+

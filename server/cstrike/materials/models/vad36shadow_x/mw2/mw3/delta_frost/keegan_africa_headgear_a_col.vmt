@@ -1,0 +1,15 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\ninja/mw2/mw3/pmc/keegan_africa_headgear_a_col"
+	"$bumpmap"    "models\ninja/mw2/mw3/pmc/keegan_africa_headgear_a_nml"
+	
+	"$phongexponent" "5"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.25"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/mw3/pmc/keegan_africa_headgear_a_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+}
+
+

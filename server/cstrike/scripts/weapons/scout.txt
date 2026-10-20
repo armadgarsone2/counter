@@ -1,50 +1,20 @@
-//SCOUT
-"Weapon_Scout.Single"
-{
-	"channel"		"CHAN_WEAPON"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.6"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/scout/scout_fire-1.wav"
-}
-
-"Weapon_Scout.Bolt"
+"Weapon_Scout.Bolt2"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
+	"CompatibilityAttenuation"	"1.00"
+	"pitch"		"95,105"
 
-	"wave"			"weapons/scout/scout_bolt.wav" 
+	"wave"			"weapons\scout\scout_bolt2.wav"
 }
 
-"Weapon_Scout.Clipout"
+"Weapon_Scout.Draw"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
+	"CompatibilityAttenuation"	"1.00"
+	"pitch"		"95,105"
 
-	"wave"			"weapons/scout/scout_clipout.wav" 
+	"wave"			"weapons\scout\draw.wav"
 }
 
-"Weapon_Scout.Clipin"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/scout/scout_clipin.wav" 
-}
-
-"Weapon_Scout.Deploy"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"		"PITCH_NORM"
-
-	"wave"			"weapons/scout/scout_draw.wav"
-}

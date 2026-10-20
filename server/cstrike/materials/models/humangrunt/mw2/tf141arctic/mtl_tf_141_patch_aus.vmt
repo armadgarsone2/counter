@@ -1,0 +1,18 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\tf141arctic\mtl_tf_141_patch_aus"
+    "$bumpmap"    "Models\humangrunt\mw2\tf141arctic\mtl_tf_141_patch_aus_nml"
+	"$phong" "1"
+//	"$phongexponent" "5"
+	"$phongalbedotint" "1"
+	"$phongboost" "0.1"
+	"$phongfresnelranges"	"[.5 1 48]"
+//	$translucent 1
+
+	"$rimlight" "1"										
+	"$rimlightexponent" "20"							
+	"$rimlightboost" "0.3"
+	$phongexponenttexture "Models\humangrunt\mw2\tf141arctic\mtl_tf_141_patch_aus_spec"
+}
+
+

@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+
+	"$basetexture" "models/player/spetsnaz_assault_guerilla/russian_military_headgear_h_col"
+                "$bumpmap"    "models/player/spetsnaz_assault_guerilla/merc_headgear_b_n"
+
+//"$translucent" "1"
+
+"$phong" "1"
+"$phongboost" "4"		
+////"$phongexponenttexture" "models\player\bravosix\MW3\woodl_rus\template_spc"
+"$phongfresnelranges"	"[0.04 0.10 0.10]"
+"$phongexponent" "6"
+"$phongalbedotint" "1"
+
+ "$rimlight" "0" 
+"$rimlightexponent" "12"								
+"$rimlightboost" "0.3"
+}

@@ -1,0 +1,14 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/spetsnaz_head/mw3_spetsnaz_head_d_c"
+	"$bumpmap" "models/player/spetsnaz_head/mw3_spetsnaz_head_d_n"
+	"$phong" "1"
+	"$phongboost" "1"		
+	"$phongfresnelranges"	"[1 3 5]"
+//	"$phongexponent" "60"
+	"$phongexponenttexture" "models/player/spetsnaz_head/mw3_spetsnaz_head_d_s"	
+        "$halflambert" "0"
+	"$rimlight" "0"
+	"$rimlightexponent" "60"
+	"$rimlightboost" "1"
+}

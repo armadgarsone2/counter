@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\ninja/mw2/mac/usmc_ghillie_mesh_col"
+	"$bumpmap"    "models\ninja/mw2/mac/usmc_ghillie_mesh_nml"
+	
+//	"$phongexponent" "5"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.1"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/mac/usmc_ghillie_mesh_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+	$alphatest 1
+	$alphatest 0
+}
+
+

@@ -1,0 +1,50 @@
+"Weapon_M4A1.Silencer_1"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"6.0"
+
+	"wave"			"weapons\m4a1\Silencer_1.wav"
+	
+}
+
+
+"Weapon_M4A1.Silencer_2"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"6.0"
+
+	"wave"			"weapons\m4a1\Silencer_2.wav"
+	
+}
+
+"Weapon_M4A1.Silencer_3"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"6.0"
+
+	"wave"			"weapons\m4a1\Silencer_3.wav"
+	
+}
+
+"Weapon_M4A1.Silencer_4"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"6.0"
+
+	"wave"			"weapons\m4a1\Silencer_4.wav"
+	
+}
+
+"Weapon_M4A1.Deploy"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.0"
+	"CompatibilityAttenuation"	"6.0"
+
+	"wave"			"weapons\m4a1\m4a1_deploy.wav"
+	
+}

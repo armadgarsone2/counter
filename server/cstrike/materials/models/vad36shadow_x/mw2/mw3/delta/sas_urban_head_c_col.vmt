@@ -1,0 +1,17 @@
+// Generated with BravoSix's tool
+// 2/7/2012 11:13:01 AM
+
+"VertexlitGeneric"
+{
+"$basetexture" "models\player\bravosix\mw3\sas\sas_urban_head_c_col"
+"$bumpmap" "models\player\bravosix\mw3\sas\sas_urban_head_b_nml_NRM"
+	
+	"$phongexponent" "14.5"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.1"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/mw3/delta/sas_urban_head_c_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+}
+

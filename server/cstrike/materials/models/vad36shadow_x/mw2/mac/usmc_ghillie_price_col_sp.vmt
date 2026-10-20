@@ -1,0 +1,15 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\ninja/mw2/tf141/usmc_ghillie_price_col_sp"
+	"$bumpmap"    "models\ninja/mw2/mac/usmc_ghillie_price_nml_sp"
+	
+	"$phongexponent" "6"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.1"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/mac/usmc_ghillie_price_spc_sp"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+}
+
+

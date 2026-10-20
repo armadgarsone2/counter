@@ -1,65 +1,24 @@
-//AWP
-"Weapon_AWP.Single"
+"Weapon_awp.b1"
 {
-	"channel"		"CHAN_WEAPON"
+	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
-	"CompatibilityAttenuation"	"0.28"
+	"CompatibilityAttenuation"	"1.0"
 	"pitch"		"PITCH_NORM"
 
-	"wave"			"weapons/awp/awp1.wav"
+	"wave"			"weapons/awp/awp_b1.wav"
 }
 
-"Weapon_AWP.Clipoff"
+"Weapon_awp.b2"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"
 	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
+	"pitch"		"PITCH_NORM"
 
-	"wave"			"weapons/awp/awp_clipoff.wav"
+	"wave"			"weapons/awp/awp_b2.wav"
 }
 
-"Weapon_AWP.Clipin"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/awp/awp_clipin.wav"
-}
-
-"Weapon_AWP.Clipout"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/awp/awp_clipout.wav"
-}
-
-"Weapon_AWP.Bolt"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"95,105"
-
-	"wave"			"weapons/awp/awp_bolt.wav"
-}
-
-"Weapon_AWP.Boltpull"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"		"1.0"
-	"CompatibilityAttenuation"	"1.0"
-	"pitch"			"100"
-
-	"wave"			"weapons/awp/awp_boltpull.wav"
-}
-
-"Weapon_AWP.Deploy"
+"Weapon_awp.draw"
 {
 	"channel"		"CHAN_ITEM"
 	"volume"		"1.0"

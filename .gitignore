@@ -21,3 +21,9 @@ Thumbs.db
 # Session files (private!)
 *.session
 *.session-journal
+
+# Derived FastDL archives (rebuildable from raw files)
+*.bz2
+
+# Source pack archives (kept on disk only)
+/server/cso2.zip

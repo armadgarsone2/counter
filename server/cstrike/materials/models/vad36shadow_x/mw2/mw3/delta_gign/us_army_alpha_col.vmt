@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\ninja/mw2/rangers/us_army_alpha_col"
+	"$bumpmap"    "models\ninja/mw2/rangers/us_army_alpha_nml"
+	
+	"$phongexponent" "5"
+	"$phongalbedotint" 1
+	"$phong" "1"
+	"$phongboost"	"0.1"
+	"$phongfresnelranges"	"[5 7 8]"
+	"$phongexponenttexture" "models\ninja/mw2/rangers/us_army_alpha_spc"
+	"$lightwarptexture" 	"models\ninja/mw2/Clothes_wrp"
+	$translucent 1
+}
+
+

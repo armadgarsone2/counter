@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+	"$basetexture" "models\player\mwghost\micro_sheet"
+	//"$basetexture" "models\player\mwghost\micro_green"
+	"$bumpmap" "models\player\mwghost\micro_sheet_normal"
+	"$phong" "1"
+
+	"$phongexponent" 10
+	"$phongboost" "0.1"	
+	"$phongfresnelranges"	"[.15 1.5 4.5]"
+	"$phongalbedotint" "0"
+}
+

@@ -1,0 +1,8 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\player\vad36eswat/eswat_alpha_a_col"
+
+	"$bumpmap" "models\player\vad36eswat/eswat_alpha_a_nml"
+	"$translucent" 1
+	"$nocull" 1
+}

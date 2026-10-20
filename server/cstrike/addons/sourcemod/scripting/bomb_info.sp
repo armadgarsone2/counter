@@ -1,10 +1,13 @@
 /*
  * Bomb Info for CS:S v34
  * When the bomb is planted, every alive player sees (updated every second):
- *   💣 time left | distance to bomb (meters) | estimated explosion damage
+ *   C4: <time left>s | Dist: <meters>m | Damage: ~<dmg>  (or SAFE)
  *
  * Damage model: C4 does ~500 max damage with ~1024 units (~26m) radius,
  * linear falloff (approximation of the game's radius damage).
+ *
+ * NOTE: v34 hint text does NOT render HTML tags or emoji/Persian properly,
+ * so this version uses plain English text only.
  *
  * Install: compile -> bomb_info.smx -> cstrike/addons/sourcemod/plugins/
  */
@@ -17,7 +20,7 @@
 
 #define UNITS_PER_METER 39.37
 #define C4_MAX_DAMAGE  500.0
-#define C4_RADIUS      1024.0
+#define C4_RADIUS      1750.0
 
 float g_fPlantTime = 0.0;
 float g_fBombPos[3];
@@ -29,7 +32,7 @@ public Plugin myinfo =
     name        = "Bomb Info",
     author      = "Server Owner",
     description = "Shows C4 countdown, distance and estimated damage",
-    version     = "1.0.0",
+    version     = "1.2.0",
     url         = ""
 };
 
@@ -93,10 +96,18 @@ public Action Timer_BombInfo(Handle timer)
         if (damage < 0.0)
             damage = 0.0;
 
+        // armor absorbs half of explosive damage
+        if (GetEntProp(i, Prop_Send, "m_ArmorValue") > 0)
+            damage *= 0.5;
+
+        // nobody has more than 100 HP — cap the display
+        if (damage > 100.0)
+            damage = 100.0;
+
         if (damage <= 0.0)
-            PrintHintText(i, "💣 انفجار تا <font color='#f0a500'>%d</font> ثانیه | فاصله: <font color='#58a6ff'>%.1f</font> متر | ✅ امنی!", left, meters);
+            PrintHintText(i, "C4: %ds | Dist: %.1fm | SAFE", left, meters);
         else
-            PrintHintText(i, "💣 انفجار تا <font color='#f0a500'>%d</font> ثانیه | فاصله: <font color='#58a6ff'>%.1f</font> متر | 💥 دمیج: <font color='#ff5555'>~%d</font>", left, meters, RoundToNearest(damage));
+            PrintHintText(i, "C4: %ds | Dist: %.1fm | Damage: ~%d", left, meters, RoundToNearest(damage));
     }
     return Plugin_Continue;
 }

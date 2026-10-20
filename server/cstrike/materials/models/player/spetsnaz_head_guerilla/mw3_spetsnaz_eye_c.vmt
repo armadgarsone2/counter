@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/spetsnaz_head/mw3_spetsnaz_eye_c"
+	"$bumpmap" "models/player/spetsnaz_head/mw3_shiny_lense_eye_n"
+}

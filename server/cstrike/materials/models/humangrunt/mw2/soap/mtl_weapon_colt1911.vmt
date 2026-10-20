@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "Models\humangrunt\mw2\soap\mtl_weapon_colt1911"
+    "$bumpmap"    "Models\humangrunt\mw2\soap\normalmap_flat"
+	"$phong" "1"
+//	"$phongexponent" "5"
+	"$phongalbedotint" "1"
+	"$phongboost" "0.2"
+	"$phongfresnelranges"	"[.5 1 48]"
+//	$translucent 1
+}
+
+

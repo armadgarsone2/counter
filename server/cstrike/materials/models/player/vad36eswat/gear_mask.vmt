@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/vad36eswat/gear_mask"
+	"$bumpmap" "models/player/vad36eswat/gear_mask_n"
+}
