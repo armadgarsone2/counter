@@ -148,3 +148,12 @@ sv_downloadurl "http://YOUR_SERVER_IP/cstrike/"
 ساخته‌شده با ☕ و 🎧 روی یه سرور کوچیک تو استکهلم
 
 </div>
+
+---
+
+### 🔎 Keywords / کلیدواژه‌ها
+
+Counter-Strike: Source v34 dedicated server (srcds) — full server package with SourceMod 1.7.3 plugins, Metamod, custom player models (MW2 Ghost, TF141, Gorka, Juggernaut, MW3 Spetsnaz), FastDL, classic game mode, Telegram admin bot and Persian documentation.
+سرور کانتر استرایک سورس نسخه ۳۴ (v34) — پکیج کامل راه‌اندازی سرور کانتر سورس، پلاگین سورس‌مد، اسکین و مدل پلیر، سرور ایرانی کانتر، دانلود سرور آماده CS:S v34.
+
+<!-- seo: counter-strike-source css v34 counter strike source server dedicated server srcds linux sourcemod metamod plugins skins player models fastdl gungame wh1tes sefidan سرور کانتر سورس سرور کانتر استرایک سرور ایرانی کانتر پکیج سرور کانتر اسکین کانتر سورس مد -->
