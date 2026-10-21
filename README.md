@@ -1,5 +1,7 @@
 <div align="center">
 
+[🇮🇷 فارسی](README.md) • [🇬🇧 English](README.en.md) • [🇷🇺 Русский](README.ru.md) • [🇹🇷 Türkçe](README.tr.md)
+
 # 🦁 سفیدان | Wh1Tes
 
 ### ⚔️ Counter-Strike: Source v34 — سرور رفقا، بدون تعارف ⚔️
