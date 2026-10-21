@@ -2,6 +2,9 @@
 
 [🇮🇷 فارسی](README.md) • [🇬🇧 English](README.en.md) • [🇷🇺 Русский](README.ru.md) • [🇹🇷 Türkçe](README.tr.md)
 
+<p align="center"><img src="assets/banner.jpg" alt="Sefidan | Wh1Tes — Counter-Strike: Source v34" width="100%"></p>
+
+
 # 🦁 Sefidan | Wh1Tes
 
 ### ⚔️ Counter-Strike: Source v34 — arkadaş sunucusu, acımak yok ⚔️
