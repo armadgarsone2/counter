@@ -40,7 +40,7 @@ public Action Timer_AnnounceJoin(Handle timer, int userid)
 {
     int client = GetClientOfUserId(userid);
     if (client > 0 && IsClientInGame(client) && !IsFakeClient(client))
-        PrintToChatAll("\x03%N \x04ﺪﺷ ﺭﻭﺮﺳ ﺩﺭﺍﻭ 👋", client);
+        PrintToChatAll("\x03%N \x04ﺪﺷ ﺭﻭﺮﺳ ﺩﺭﺍﻭ ", client);
     return Plugin_Stop;
 }
 

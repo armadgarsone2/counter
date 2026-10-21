@@ -43,7 +43,7 @@ public Action Cmd_Toggle(int client, int args)
     if (client == 0)
         return Plugin_Handled;
     g_bDmg[client] = !g_bDmg[client];
-    PrintToChat(client, "🎯 ﺞﯿﻣﺩ ﺶﯾﺎﻤﻧ: %s", g_bDmg[client] ? "ﻦﺷﻭﺭ ✅" : "ﺵﻮﻣﺎﺧ ❌");
+    PrintToChat(client, " ﺞﯿﻣﺩ ﺶﯾﺎﻤﻧ: %s", g_bDmg[client] ? "ﻦﺷﻭﺭ " : "ﺵﻮﻣﺎﺧ ");
     return Plugin_Handled;
 }
 
@@ -64,5 +64,5 @@ public void Event_PlayerHurt(Event event, const char[] name, bool dontBroadcast)
     if (hp < 0)
         hp = 0;
 
-    PrintHintText(attacker, "🎯 Damage: %d  |  HP: %d", dmg, hp);
+    PrintHintText(attacker, " Damage: %d  |  HP: %d", dmg, hp);
 }

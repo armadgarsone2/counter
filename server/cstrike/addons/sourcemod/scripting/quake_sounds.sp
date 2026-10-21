@@ -91,7 +91,7 @@ public Action Cmd_Toggle(int client, int args)
     if (client == 0)
         return Plugin_Handled;
     g_bQuake[client] = !g_bQuake[client];
-    PrintToChat(client, "🔊 ﯼﺎﻫﺍﺪﺻ Quake: %s", g_bQuake[client] ? "ﻦﺷﻭﺭ ✅" : "ﺵﻮﻣﺎﺧ ❌");
+    PrintToChat(client, " ﯼﺎﻫﺍﺪﺻ Quake: %s", g_bQuake[client] ? "ﻦﺷﻭﺭ " : "ﺵﻮﻣﺎﺧ ");
     return Plugin_Handled;
 }
 
@@ -138,7 +138,7 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
     {
         g_bFirstBloodDone = true;
         PlayToAll("quake/firstblood.mp3");
-        PrintToChatAll("\x04🩸 First Blood! \x03%N", attacker);
+        PrintToChatAll("\x04 First Blood! \x03%N", attacker);
     }
 
     // ---- multi-kill window ----
@@ -157,7 +157,7 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
     if (knife)
     {
         PlayToAll("quake/humiliation.mp3");
-        PrintToChatAll("\x02🔪 Humiliation! \x03%N \x01ﺩﺯ ﻮﻗﺎﭼ ﺎﺑ!", attacker);
+        PrintToChatAll("\x02 Humiliation! \x03%N \x01ﺩﺯ ﻮﻗﺎﭼ ﺎﺑ!", attacker);
         return; // knife kill skips the rest
     }
 
@@ -169,28 +169,28 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
     if (g_iMulti[attacker] == 2)
     {
         PlayToAll("quake/doublekill.mp3");
-        PrintToChatAll("\x04⚡ Double Kill! \x03%N", attacker);
+        PrintToChatAll("\x04 Double Kill! \x03%N", attacker);
     }
     else if (g_iMulti[attacker] == 3)
     {
         PlayToAll("quake/triplekill.mp3");
-        PrintToChatAll("\x04⚡⚡ Triple Kill! \x03%N", attacker);
+        PrintToChatAll("\x04 Triple Kill! \x03%N", attacker);
     }
     else if (g_iMulti[attacker] >= 4)
     {
         PlayToAll("quake/multikill.mp3");
-        PrintToChatAll("\x04⚡⚡⚡ MULTI KILL x%d! \x03%N", g_iMulti[attacker], attacker);
+        PrintToChatAll("\x04 MULTI KILL x%d! \x03%N", g_iMulti[attacker], attacker);
     }
 
     // ---- streaks ----
     if (g_iStreak[attacker] == SPREE_KILLS)
     {
         PlayToAll("quake/killingspree.mp3");
-        PrintToChatAll("\x04🔥 Killing Spree! \x03%N \x01(%d ﻢﻫ ﺮﺳ ﺖﺸﭘ ﻞﯿﮐ)", attacker, g_iStreak[attacker]);
+        PrintToChatAll("\x04 Killing Spree! \x03%N \x01(%d ﻢﻫ ﺮﺳ ﺖﺸﭘ ﻞﯿﮐ)", attacker, g_iStreak[attacker]);
     }
     else if (g_iStreak[attacker] == RAMPAGE_KILLS)
     {
         PlayToAll("quake/rampage.mp3");
-        PrintToChatAll("\x04💀 RAMPAGE! \x03%N \x01(%d ﻢﻫ ﺮﺳ ﺖﺸﭘ ﻞﯿﮐ)", attacker, g_iStreak[attacker]);
+        PrintToChatAll("\x04 RAMPAGE! \x03%N \x01(%d ﻢﻫ ﺮﺳ ﺖﺸﭘ ﻞﯿﮐ)", attacker, g_iStreak[attacker]);
     }
 }

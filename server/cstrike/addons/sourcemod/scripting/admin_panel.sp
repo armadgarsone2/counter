@@ -2,8 +2,8 @@
  * Admin Panel (!admin) v3.0 - rewritten per owner spec
  *
  * Main menu:
- *   1. دستورات پلیرها   2. دستورات سرور   3. دستورات رای‌گیری
- *   4. مدیریت بات‌ها     5. سوپر ادمین     7. تلپورت منو   8. تنظیمات خاص
+ *   1. ﺎﻫﺮﯿﻠﭘ ﺕﺍﺭﻮﺘﺳﺩ   2. ﺭﻭﺮﺳ ﺕﺍﺭﻮﺘﺳﺩ   3. ﯼﺮﯿﮔﯼﺍﺭ ﺕﺍﺭﻮﺘﺳﺩ
+ *   4. ﺎﻫﺕﺎﺑ ﺖﯾﺮﯾﺪﻣ     5. ﻦﯿﻣﺩﺍ ﺮﭘﻮﺳ     7. ﻮﻨﻣ ﺕﺭﻮﭙﻠﺗ   8. ﺹﺎﺧ ﺕﺎﻤﯿﻈﻨﺗ
  *
  * Provides native AP_HasCheatAccess(client) for the cheater menu (/cheat grants).
  */
@@ -121,7 +121,7 @@ public Action OnClientSay(int client, const char[] command, int argc)
     TrimString(text);
     if (StrEqual(text, "!admin", false) || StrEqual(text, "/admin", false)) {
         if (IsUserAdmin(client)) ShowMainMenu(client);
-        else PrintToChat(client, "[Server] ادمین نیستی!");
+        else PrintToChat(client, "[Server] ﯽﺘﺴﯿﻧ ﻦﯿﻣﺩﺍ!");
         return Plugin_Handled;
     }
     return Plugin_Continue;
@@ -147,14 +147,14 @@ public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast
 public void ShowMainMenu(int client)
 {
     Menu menu = new Menu(MainMenuHandler);
-    menu.SetTitle("پنل ادمین سرور:");
-    menu.AddItem("players",  "1. دستورات پلیرها");
-    menu.AddItem("server",   "2. دستورات سرور");
-    menu.AddItem("vote",     "3. دستورات رای‌گیری");
-    menu.AddItem("bots",     "4. مدیریت بات‌ها");
-    menu.AddItem("super",    "5. سوپر ادمین");
-    menu.AddItem("teleport", "7. تلپورت منو");
-    menu.AddItem("settings", "8. تنظیمات خاص");
+    menu.SetTitle("ﺭﻭﺮﺳ ﻦﯿﻣﺩﺍ ﻞﻨﭘ:");
+    menu.AddItem("players",  "1. ﺎﻫﺮﯿﻠﭘ ﺕﺍﺭﻮﺘﺳﺩ");
+    menu.AddItem("server",   "2. ﺭﻭﺮﺳ ﺕﺍﺭﻮﺘﺳﺩ");
+    menu.AddItem("vote",     "3. ﯼﺮﯿﮔﯼﺍﺭ ﺕﺍﺭﻮﺘﺳﺩ");
+    menu.AddItem("bots",     "4. ﺎﻫﺕﺎﺑ ﺖﯾﺮﯾﺪﻣ");
+    menu.AddItem("super",    "5. ﻦﯿﻣﺩﺍ ﺮﭘﻮﺳ");
+    menu.AddItem("teleport", "7. ﻮﻨﻣ ﺕﺭﻮﭙﻠﺗ");
+    menu.AddItem("settings", "8. ﺹﺎﺧ ﺕﺎﻤﯿﻈﻨﺗ");
     menu.Display(client, 30);
 }
 
@@ -179,13 +179,13 @@ public void ShowPlayerList(int client, int filter)
 {
     Menu menu = new Menu(PlayerListHandler);
     switch (filter) {
-        case FLT_ALIVE:   menu.SetTitle("پلیر را انتخاب کن (زنده‌ها):");
-        case FLT_DEAD:    menu.SetTitle("پلیر را انتخاب کن (مرده‌ها):");
-        case FLT_BOTS:    menu.SetTitle("بات را انتخاب کن:");
-        case FLT_BURNING: menu.SetTitle("پلیر در حال سوختن:");
-        case FLT_MUTED:   menu.SetTitle("پلیر میوت/گگ شده:");
-        case FLT_OPPTEAM: menu.SetTitle("پلیر تیم مقابل را انتخاب کن:");
-        default:          menu.SetTitle("پلیر را انتخاب کن:");
+        case FLT_ALIVE:   menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﺮﯿﻠﭘ (ﺎﻫﻩﺪﻧﺯ):");
+        case FLT_DEAD:    menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﺮﯿﻠﭘ (ﺎﻫﻩﺩﺮﻣ):");
+        case FLT_BOTS:    menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﺕﺎﺑ:");
+        case FLT_BURNING: menu.SetTitle("ﻦﺘﺧﻮﺳ ﻝﺎﺣ ﺭﺩ ﺮﯿﻠﭘ:");
+        case FLT_MUTED:   menu.SetTitle("ﺕﻮﯿﻣ ﺮﯿﻠﭘ/ﻩﺪﺷ ﮓﮔ:");
+        case FLT_OPPTEAM: menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﻞﺑﺎﻘﻣ ﻢﯿﺗ ﺮﯿﻠﭘ:");
+        default:          menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﺮﯿﻠﭘ:");
     }
 
     int count = 0;
@@ -216,7 +216,7 @@ public void ShowPlayerList(int client, int filter)
         count++;
     }
     if (count == 0)
-        menu.AddItem("", "— لیست خالی —", ITEMDRAW_DISABLED);
+        menu.AddItem("", "— ﯽﻟﺎﺧ ﺖﺴﯿﻟ —", ITEMDRAW_DISABLED);
     menu.ExitBackButton = true;
     menu.Display(client, 30);
 }
@@ -235,7 +235,7 @@ public int PlayerListHandler(Menu menu, MenuAction action, int client, int itemN
     menu.GetItem(itemNum, info, sizeof(info));
     int target = GetClientOfUserId(StringToInt(info));
     if (target <= 0 || !IsClientInGame(target)) {
-        PrintToChat(client, "[Server] پلیر از سرور رفت.");
+        PrintToChat(client, "[Server] ﺖﻓﺭ ﺭﻭﺮﺳ ﺯﺍ ﺮﯿﻠﭘ.");
         return 0;
     }
     char tname[64];
@@ -246,45 +246,45 @@ public int PlayerListHandler(Menu menu, MenuAction action, int client, int itemN
     switch (act) {
         case ACT_KICK: {
             ServerCommand("kickid %d \"Kicked by Admin\"", tuid);
-            PrintToChatAll("[Server] %s کیک شد.", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﮏﯿﮐ.", tname);
         }
         case ACT_BAN: {
             ServerCommand("banid 30 %d", tuid);
             ServerCommand("kickid %d \"Banned by Admin\"", tuid);
-            PrintToChatAll("[Server] %s بن شد (30 دقیقه).", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﻦﺑ (30 ﻪﻘﯿﻗﺩ).", tname);
         }
         case ACT_MUTE: {
             ServerCommand("sm_mute \"#%d\"", tuid);
             g_bMutedByPanel[target] = true;
-            PrintToChatAll("[Server] %s میوت شد (ویس).", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﺕﻮﯿﻣ (ﺲﯾﻭ).", tname);
         }
         case ACT_GAG: {
             ServerCommand("sm_gag \"#%d\"", tuid);
             g_bMutedByPanel[target] = true;
-            PrintToChatAll("[Server] %s گگ شد (چت).", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﮓﮔ (ﺖﭼ).", tname);
         }
         case ACT_SILENCE: {
             ServerCommand("sm_silence \"#%d\"", tuid);
             g_bMutedByPanel[target] = true;
-            PrintToChatAll("[Server] %s سایلنت شد.", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﺖﻨﻠﯾﺎﺳ.", tname);
         }
         case ACT_UNMUTE: {
             ServerCommand("sm_unmute \"#%d\"", tuid);
             ServerCommand("sm_ungag \"#%d\"", tuid);
             g_bMutedByPanel[target] = false;
-            PrintToChatAll("[Server] میوت %s برداشته شد.", tname);
+            PrintToChatAll("[Server] ﺕﻮﯿﻣ %s ﺪﺷ ﻪﺘﺷﺍﺩﺮﺑ.", tname);
         }
         case ACT_CHANGETEAM: {
             int team = GetClientTeam(target);
             if (team == 2) ChangeClientTeam(target, 3);
             else if (team == 3) ChangeClientTeam(target, 2);
-            else PrintToChat(client, "[Server] پلیر توی تیم نیست.");
-            PrintToChatAll("[Server] تیم %s عوض شد.", tname);
+            else PrintToChat(client, "[Server] ﺖﺴﯿﻧ ﻢﯿﺗ ﯼﻮﺗ ﺮﯿﻠﭘ.");
+            PrintToChatAll("[Server] ﻢﯿﺗ %s ﺪﺷ ﺽﻮﻋ.", tname);
         }
         case ACT_EXCHANGE: {
             if (g_iFirstPick[client] == 0) {
                 g_iFirstPick[client] = tuid;
-                PrintToChat(client, "[Server] اول: %s — حالا از تیم مقابل انتخاب کن.", tname);
+                PrintToChat(client, "[Server] ﻝﻭﺍ: %s — ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﻞﺑﺎﻘﻣ ﻢﯿﺗ ﺯﺍ ﻻﺎﺣ.", tname);
                 ShowPlayerList(client, FLT_OPPTEAM);
             } else {
                 int first = GetClientOfUserId(g_iFirstPick[client]);
@@ -297,40 +297,40 @@ public int PlayerListHandler(Menu menu, MenuAction action, int client, int itemN
                         ChangeClientTeam(target, team1);
                         char n1[64];
                         GetClientName(first, n1, sizeof(n1));
-                        PrintToChatAll("[Server] %s و %s جا به جا شدن.", n1, tname);
-                    } else PrintToChat(client, "[Server] هر دو باید توی تیم باشن.");
-                } else PrintToChat(client, "[Server] انتخاب نامعتبر.");
+                        PrintToChatAll("[Server] %s ﻭ %s ﻥﺪﺷ ﺎﺟ ﻪﺑ ﺎﺟ.", n1, tname);
+                    } else PrintToChat(client, "[Server] ﻦﺷﺎﺑ ﻢﯿﺗ ﯼﻮﺗ ﺪﯾﺎﺑ ﻭﺩ ﺮﻫ.");
+                } else PrintToChat(client, "[Server] ﺮﺒﺘﻌﻣﺎﻧ ﺏﺎﺨﺘﻧﺍ.");
             }
         }
         case ACT_BURN: {
             IgniteEntity(target, 15.0);
             g_bBurning[target] = true;
-            PrintToChatAll("[Server] %s آتیش گرفت! 🔥", tname);
+            PrintToChatAll("[Server] %s ﺖﻓﺮﮔ ﺶﯿﺗﺁ! ", tname);
         }
         case ACT_KILLONE: {
             ForcePlayerSuicide(target);
-            PrintToChatAll("[Server] %s کشته شد.", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﻪﺘﺸﮐ.", tname);
         }
         case ACT_RESPAWN: {
             CS_RespawnPlayer(target);
             TeleportEntity(target, g_DeathPos[target], NULL_VECTOR, NULL_VECTOR);
-            PrintToChatAll("[Server] %s ری‌اسپاون شد.", tname);
+            PrintToChatAll("[Server] %s ﺪﺷ ﻥﻭﺎﭙﺳﺍﯼﺭ.", tname);
         }
         case ACT_UNBURN: {
             ExtinguishEntity(target);
             g_bBurning[target] = false;
-            PrintToChatAll("[Server] آتیش %s خاموش شد.", tname);
+            PrintToChatAll("[Server] ﺶﯿﺗﺁ %s ﺪﺷ ﺵﻮﻣﺎﺧ.", tname);
         }
         case ACT_GRANTCHEAT: {
             g_bCheatGranted[target] = true;
-            PrintToChatAll("[Server] %s دسترسی چیت گرفت! ✅", tname);
-            PrintToChat(target, "[Server] با دستور \x04/cheat \x01منوی چیت رو باز کن");
+            PrintToChatAll("[Server] %s ﺖﻓﺮﮔ ﺖﯿﭼ ﯽﺳﺮﺘﺳﺩ! ", tname);
+            PrintToChat(target, "[Server] ﺭﻮﺘﺳﺩ ﺎﺑ \x04/cheat \x01ﻦﮐ ﺯﺎﺑ ﻭﺭ ﺖﯿﭼ ﯼﻮﻨﻣ");
         }
         case ACT_TP_SAVED_ONE: {
             if (g_HasSavedLocation) {
                 TeleportEntity(target, g_SavedLocation, NULL_VECTOR, NULL_VECTOR);
-                PrintToChat(client, "[Server] %s تلپورت شد.", tname);
-            } else PrintToChat(client, "[Server] اول لوکیشن سیو کن!");
+                PrintToChat(client, "[Server] %s ﺪﺷ ﺕﺭﻮﭙﻠﺗ.", tname);
+            } else PrintToChat(client, "[Server] ﻦﮐ ﻮﯿﺳ ﻦﺸﯿﮐﻮﻟ ﻝﻭﺍ!");
         }
         case ACT_TP_P2P_SRC: {
             // info holds special picks or a userid
@@ -345,25 +345,25 @@ public int PlayerListHandler(Menu menu, MenuAction action, int client, int itemN
                 for (int i = 1; i <= MaxClients; i++)
                     if (IsClientInGame(i) && IsPlayerAlive(i))
                         TeleportEntity(i, dest, NULL_VECTOR, NULL_VECTOR);
-                PrintToChatAll("[Server] همه به %s تلپورت شدن.", tname);
+                PrintToChatAll("[Server] ﻪﺑ ﻪﻤﻫ %s ﻥﺪﺷ ﺕﺭﻮﭙﻠﺗ.", tname);
             } else if (src == -2) {
                 for (int i = 1; i <= MaxClients; i++)
                     if (IsClientInGame(i) && IsFakeClient(i) && IsPlayerAlive(i))
                         TeleportEntity(i, dest, NULL_VECTOR, NULL_VECTOR);
-                PrintToChat(client, "[Server] بات‌ها تلپورت شدن.");
+                PrintToChat(client, "[Server] ﻥﺪﺷ ﺕﺭﻮﭙﻠﺗ ﺎﻫﺕﺎﺑ.");
             } else if (src == -3) {
                 for (int i = 1; i <= MaxClients; i++)
                     if (IsClientInGame(i) && !IsFakeClient(i) && IsPlayerAlive(i))
                         TeleportEntity(i, dest, NULL_VECTOR, NULL_VECTOR);
-                PrintToChat(client, "[Server] پلیرهای زنده تلپورت شدن.");
+                PrintToChat(client, "[Server] ﻥﺪﺷ ﺕﺭﻮﭙﻠﺗ ﻩﺪﻧﺯ ﯼﺎﻫﺮﯿﻠﭘ.");
             } else {
                 int srcc = GetClientOfUserId(src);
                 if (srcc > 0 && IsClientInGame(srcc) && IsPlayerAlive(srcc)) {
                     TeleportEntity(srcc, dest, NULL_VECTOR, NULL_VECTOR);
                     char n1[64];
                     GetClientName(srcc, n1, sizeof(n1));
-                    PrintToChat(client, "[Server] %s به %s تلپورت شد.", n1, tname);
-                } else PrintToChat(client, "[Server] پلیر مبدا معتبر نیست.");
+                    PrintToChat(client, "[Server] %s ﻪﺑ %s ﺪﺷ ﺕﺭﻮﭙﻠﺗ.", n1, tname);
+                } else PrintToChat(client, "[Server] ﺖﺴﯿﻧ ﺮﺒﺘﻌﻣ ﺍﺪﺒﻣ ﺮﯿﻠﭘ.");
             }
             g_iFirstPick[client] = 0;
         }
@@ -391,7 +391,7 @@ void ShowDestPlayerList(int client)
 {
     g_iAction[client] = ACT_TP_P2P_DST;
     Menu menu = new Menu(PlayerListHandler);
-    menu.SetTitle("پلیر مقصد را انتخاب کن:");
+    menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﺪﺼﻘﻣ ﺮﯿﻠﭘ:");
     for (int i = 1; i <= MaxClients; i++) {
         if (!IsClientInGame(i)) continue;
         char name[64], id[16];
@@ -407,14 +407,14 @@ void ShowDestPlayerList(int client)
 public void ShowPlayerMenu(int client)
 {
     Menu menu = new Menu(PlayerMenuHandler);
-    menu.SetTitle("1. دستورات پلیرها:");
-    menu.AddItem("kick",      "1. کیک پلیر");
-    menu.AddItem("ban",       "2. بن پلیر");
-    menu.AddItem("mute_menu", "3. میوت کردن پلیر");
-    menu.AddItem("changeteam","4. چنج تیم");
-    menu.AddItem("exchange",  "6. اکسچنج پلیر");
-    menu.AddItem("unmute",    "7. رفع میوت/گگ/سایلنت");
-    menu.AddItem("back",      "<- برگشت");
+    menu.SetTitle("1. ﺎﻫﺮﯿﻠﭘ ﺕﺍﺭﻮﺘﺳﺩ:");
+    menu.AddItem("kick",      "1. ﺮﯿﻠﭘ ﮏﯿﮐ");
+    menu.AddItem("ban",       "2. ﺮﯿﻠﭘ ﻦﺑ");
+    menu.AddItem("mute_menu", "3. ﺮﯿﻠﭘ ﻥﺩﺮﮐ ﺕﻮﯿﻣ");
+    menu.AddItem("changeteam","4. ﻢﯿﺗ ﺞﻨﭼ");
+    menu.AddItem("exchange",  "6. ﺮﯿﻠﭘ ﺞﻨﭽﺴﮐﺍ");
+    menu.AddItem("unmute",    "7. ﺕﻮﯿﻣ ﻊﻓﺭ/ﮓﮔ/ﺖﻨﻠﯾﺎﺳ");
+    menu.AddItem("back",      "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -437,11 +437,11 @@ public int PlayerMenuHandler(Menu menu, MenuAction action, int client, int itemN
 public void ShowMuteSubMenu(int client)
 {
     Menu menu = new Menu(MuteSubHandler);
-    menu.SetTitle("میوت کردن:");
-    menu.AddItem("mute",    "1. میوت کردن پلیر (ویس)");
-    menu.AddItem("gag",     "2. گگ پلیر (چت)");
-    menu.AddItem("silence", "3. سایلنت کردن پلیر (هر دو)");
-    menu.AddItem("back",    "<- برگشت");
+    menu.SetTitle("ﻥﺩﺮﮐ ﺕﻮﯿﻣ:");
+    menu.AddItem("mute",    "1. ﺮﯿﻠﭘ ﻥﺩﺮﮐ ﺕﻮﯿﻣ (ﺲﯾﻭ)");
+    menu.AddItem("gag",     "2. ﺮﯿﻠﭘ ﮓﮔ (ﺖﭼ)");
+    menu.AddItem("silence", "3. ﺮﯿﻠﭘ ﻥﺩﺮﮐ ﺖﻨﻠﯾﺎﺳ (ﻭﺩ ﺮﻫ)");
+    menu.AddItem("back",    "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -462,12 +462,12 @@ public int MuteSubHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowServerMenu(int client)
 {
     Menu menu = new Menu(ServerMenuHandler);
-    menu.SetTitle("2. دستورات سرور:");
-    menu.AddItem("map",     "1. چوز مپ");
-    menu.AddItem("balance", "2. بلانس تیم");
-    menu.AddItem("restart", "3. ری‌استارت گیم");
-    menu.AddItem("swap",    "4. سواپ تیم");
-    menu.AddItem("back",    "<- برگشت");
+    menu.SetTitle("2. ﺭﻭﺮﺳ ﺕﺍﺭﻮﺘﺳﺩ:");
+    menu.AddItem("map",     "1. ﭗﻣ ﺯﻮﭼ");
+    menu.AddItem("balance", "2. ﻢﯿﺗ ﺲﻧﻼﺑ");
+    menu.AddItem("restart", "3. ﻢﯿﮔ ﺕﺭﺎﺘﺳﺍﯼﺭ");
+    menu.AddItem("swap",    "4. ﻢﯿﺗ ﭖﺍﻮﺳ");
+    menu.AddItem("back",    "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -483,7 +483,7 @@ public int ServerMenuHandler(Menu menu, MenuAction action, int client, int itemN
         }
         else if (StrEqual(info, "restart")) {
             ServerCommand("mp_restartgame 1");
-            PrintToChatAll("[Server] بازی ری‌استارت شد.");
+            PrintToChatAll("[Server] ﺪﺷ ﺕﺭﺎﺘﺳﺍﯼﺭ ﯼﺯﺎﺑ.");
         }
         else if (StrEqual(info, "swap")) {
             SwapTeams();
@@ -503,7 +503,7 @@ void BalanceTeams()
     }
     while (nt > nct + 1) { ChangeClientTeam(t[--nt], 3); nct++; }
     while (nct > nt + 1) { ChangeClientTeam(ct[--nct], 2); nt++; }
-    PrintToChatAll("[Server] تیم‌ها بالانس شدن. (T:%d | CT:%d)", nt, nct);
+    PrintToChatAll("[Server] ﻥﺪﺷ ﺲﻧﻻﺎﺑ ﺎﻫﻢﯿﺗ. (T:%d | CT:%d)", nt, nct);
 }
 
 void SwapTeams()
@@ -517,13 +517,13 @@ void SwapTeams()
     }
     for (int i = 0; i < nt; i++) ChangeClientTeam(t[i], 3);
     for (int i = 0; i < nct; i++) ChangeClientTeam(ct[i], 2);
-    PrintToChatAll("[Server] تیم‌ها سواپ شدن!");
+    PrintToChatAll("[Server] ﻥﺪﺷ ﭖﺍﻮﺳ ﺎﻫﻢﯿﺗ!");
 }
 
 public void ShowMapList(int client)
 {
     Menu menu = new Menu(MapListHandler);
-    menu.SetTitle("مپ را انتخاب کن:");
+    menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﭗﻣ:");
     char path[PLATFORM_MAX_PATH];
     BuildPath(Path_SM, path, sizeof(path), "../../mapcycle.txt");
     int count = 0;
@@ -557,7 +557,7 @@ public int MapListHandler(Menu menu, MenuAction action, int client, int itemNum)
     if (action == MenuAction_Select) {
         char map[64];
         menu.GetItem(itemNum, map, sizeof(map));
-        PrintToChatAll("[Server] مپ عوض شد: %s", map);
+        PrintToChatAll("[Server] ﺪﺷ ﺽﻮﻋ ﭗﻣ: %s", map);
         char cmd[96];
         Format(cmd, sizeof(cmd), "changelevel %s", map);
         ServerCommand("%s", cmd);
@@ -569,10 +569,10 @@ public int MapListHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowVoteMenu(int client)
 {
     Menu menu = new Menu(VoteHandler);
-    menu.SetTitle("3. دستورات رای‌گیری:");
-    menu.AddItem("votemap", "1. رای‌گیری مپ");
-    menu.AddItem("votekick", "2. رای‌گیری کیک");
-    menu.AddItem("back", "<- برگشت");
+    menu.SetTitle("3. ﯼﺮﯿﮔﯼﺍﺭ ﺕﺍﺭﻮﺘﺳﺩ:");
+    menu.AddItem("votemap", "1. ﭗﻣ ﯼﺮﯿﮔﯼﺍﺭ");
+    menu.AddItem("votekick", "2. ﮏﯿﮐ ﯼﺮﯿﮔﯼﺍﺭ");
+    menu.AddItem("back", "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -582,7 +582,7 @@ public int VoteHandler(Menu menu, MenuAction action, int client, int itemNum)
         char info[32];
         menu.GetItem(itemNum, info, sizeof(info));
         if (StrEqual(info, "back")) { ShowMainMenu(client); return 0; }
-        PrintToChat(client, "[Server] این بخش هنوز فعال نیست.");
+        PrintToChat(client, "[Server] ﺖﺴﯿﻧ ﻝﺎﻌﻓ ﺯﻮﻨﻫ ﺶﺨﺑ ﻦﯾﺍ.");
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }
@@ -591,14 +591,14 @@ public int VoteHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowBotMenu(int client)
 {
     Menu menu = new Menu(BotMenuHandler);
-    menu.SetTitle("4. مدیریت بات‌ها:");
-    menu.AddItem("add",      "1. اد بات");
-    menu.AddItem("weapon",   "2. سلاح بات‌ها");
-    menu.AddItem("diff",     "3. سطح بات‌ها");
-    menu.AddItem("kickone",  "4. حذف بات خاص");
-    menu.AddItem("kickall",  "5. حذف تمام بات‌ها");
-    menu.AddItem("killall",  "6. کشتن تمام بات‌ها");
-    menu.AddItem("back",     "<- برگشت");
+    menu.SetTitle("4. ﺎﻫﺕﺎﺑ ﺖﯾﺮﯾﺪﻣ:");
+    menu.AddItem("add",      "1. ﺕﺎﺑ ﺩﺍ");
+    menu.AddItem("weapon",   "2. ﺎﻫﺕﺎﺑ ﺡﻼﺳ");
+    menu.AddItem("diff",     "3. ﺎﻫﺕﺎﺑ ﺢﻄﺳ");
+    menu.AddItem("kickone",  "4. ﺹﺎﺧ ﺕﺎﺑ ﻑﺬﺣ");
+    menu.AddItem("kickall",  "5. ﺎﻫﺕﺎﺑ ﻡﺎﻤﺗ ﻑﺬﺣ");
+    menu.AddItem("killall",  "6. ﺎﻫﺕﺎﺑ ﻡﺎﻤﺗ ﻦﺘﺸﮐ");
+    menu.AddItem("back",     "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -614,11 +614,11 @@ public int BotMenuHandler(Menu menu, MenuAction action, int client, int itemNum)
         else if (StrEqual(info, "kickone")) { g_iAction[client] = 100; ShowBotKickList(client); }
         else if (StrEqual(info, "kickall")) {
             ServerCommand("bot_kick");
-            PrintToChatAll("[Server] تمام بات‌ها حذف شدن.");
+            PrintToChatAll("[Server] ﻥﺪﺷ ﻑﺬﺣ ﺎﻫﺕﺎﺑ ﻡﺎﻤﺗ.");
         }
         else if (StrEqual(info, "killall")) {
             ServerCommand("bot_kill");
-            PrintToChatAll("[Server] تمام بات‌ها کشته شدن.");
+            PrintToChatAll("[Server] ﻥﺪﺷ ﻪﺘﺸﮐ ﺎﻫﺕﺎﺑ ﻡﺎﻤﺗ.");
         }
     } else if (action == MenuAction_End) delete menu;
     return 0;
@@ -627,11 +627,11 @@ public int BotMenuHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowBotAddMenu(int client)
 {
     Menu menu = new Menu(BotAddHandler);
-    menu.SetTitle("اد بات:");
-    menu.AddItem("random", "1. اد بات (رندوم)");
-    menu.AddItem("ct",     "2. اد بات سی‌تی");
-    menu.AddItem("t",      "3. اد بات ترور");
-    menu.AddItem("back",   "<- برگشت");
+    menu.SetTitle("ﺕﺎﺑ ﺩﺍ:");
+    menu.AddItem("random", "1. ﺕﺎﺑ ﺩﺍ (ﻡﻭﺪﻧﺭ)");
+    menu.AddItem("ct",     "2. ﯽﺗﯽﺳ ﺕﺎﺑ ﺩﺍ");
+    menu.AddItem("t",      "3. ﺭﻭﺮﺗ ﺕﺎﺑ ﺩﺍ");
+    menu.AddItem("back",   "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -644,7 +644,7 @@ public int BotAddHandler(Menu menu, MenuAction action, int client, int itemNum)
         if (StrEqual(info, "random")) ServerCommand("bot_add");
         else if (StrEqual(info, "ct")) ServerCommand("bot_add_ct");
         else if (StrEqual(info, "t")) ServerCommand("bot_add_t");
-        PrintToChat(client, "[Server] بات اضافه شد.");
+        PrintToChat(client, "[Server] ﺪﺷ ﻪﻓﺎﺿﺍ ﺕﺎﺑ.");
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }
@@ -652,12 +652,12 @@ public int BotAddHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowBotWeaponMenu(int client)
 {
     Menu menu = new Menu(BotWeaponHandler);
-    menu.SetTitle("سلاح بات‌ها:");
-    menu.AddItem("all",    "1. همه سلاح‌ها");
-    menu.AddItem("knife",  "2. فقط چاقو");
-    menu.AddItem("pistol", "3. فقط پیستول");
-    menu.AddItem("sniper", "4. فقط اسنایپر");
-    menu.AddItem("back",   "<- برگشت");
+    menu.SetTitle("ﺎﻫﺕﺎﺑ ﺡﻼﺳ:");
+    menu.AddItem("all",    "1. ﺎﻫﺡﻼﺳ ﻪﻤﻫ");
+    menu.AddItem("knife",  "2. ﻮﻗﺎﭼ ﻂﻘﻓ");
+    menu.AddItem("pistol", "3. ﻝﻮﺘﺴﯿﭘ ﻂﻘﻓ");
+    menu.AddItem("sniper", "4. ﺮﭙﯾﺎﻨﺳﺍ ﻂﻘﻓ");
+    menu.AddItem("back",   "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -671,7 +671,7 @@ public int BotWeaponHandler(Menu menu, MenuAction action, int client, int itemNu
         if (StrEqual(info, "knife")) ServerCommand("bot_knives_only 1");
         else if (StrEqual(info, "pistol")) ServerCommand("bot_pistols_only 1");
         else if (StrEqual(info, "sniper")) ServerCommand("bot_snipers_only 1");
-        PrintToChatAll("[Server] سلاح بات‌ها تنظیم شد.");
+        PrintToChatAll("[Server] ﺪﺷ ﻢﯿﻈﻨﺗ ﺎﻫﺕﺎﺑ ﺡﻼﺳ.");
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }
@@ -679,12 +679,12 @@ public int BotWeaponHandler(Menu menu, MenuAction action, int client, int itemNu
 public void ShowBotDiffMenu(int client)
 {
     Menu menu = new Menu(BotDiffHandler);
-    menu.SetTitle("سطح بات‌ها:");
-    menu.AddItem("0", "1. ایزی");
-    menu.AddItem("1", "2. نرمال");
-    menu.AddItem("2", "3. هارد");
-    menu.AddItem("3", "4. اکسپرت");
-    menu.AddItem("back", "<- برگشت");
+    menu.SetTitle("ﺎﻫﺕﺎﺑ ﺢﻄﺳ:");
+    menu.AddItem("0", "1. ﯼﺰﯾﺍ");
+    menu.AddItem("1", "2. ﻝﺎﻣﺮﻧ");
+    menu.AddItem("2", "3. ﺩﺭﺎﻫ");
+    menu.AddItem("3", "4. ﺕﺮﭙﺴﮐﺍ");
+    menu.AddItem("back", "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -695,12 +695,12 @@ public int BotDiffHandler(Menu menu, MenuAction action, int client, int itemNum)
         menu.GetItem(itemNum, info, sizeof(info));
         if (StrEqual(info, "back")) { ShowBotMenu(client); return 0; }
         ServerCommand("bot_difficulty %s", info);
-        char label[16];
-        if (StrEqual(info, "0")) label = "ایزی";
-        else if (StrEqual(info, "1")) label = "نرمال";
-        else if (StrEqual(info, "2")) label = "هارد";
-        else label = "اکسپرت";
-        PrintToChatAll("[Server] سطح بات‌ها: %s", label);
+        char label[32];
+        if (StrEqual(info, "0")) label = "ﯼﺰﯾﺍ";
+        else if (StrEqual(info, "1")) label = "ﻝﺎﻣﺮﻧ";
+        else if (StrEqual(info, "2")) label = "ﺩﺭﺎﻫ";
+        else label = "ﺕﺮﭙﺴﮐﺍ";
+        PrintToChatAll("[Server] ﺎﻫﺕﺎﺑ ﺢﻄﺳ: %s", label);
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }
@@ -708,7 +708,7 @@ public int BotDiffHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowBotKickList(int client)
 {
     Menu menu = new Menu(BotKickHandler);
-    menu.SetTitle("بات را برای حذف انتخاب کن:");
+    menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﻑﺬﺣ ﯼﺍﺮﺑ ﺍﺭ ﺕﺎﺑ:");
     int count = 0;
     for (int i = 1; i <= MaxClients; i++) {
         if (!IsClientInGame(i) || !IsFakeClient(i)) continue;
@@ -717,7 +717,7 @@ public void ShowBotKickList(int client)
         menu.AddItem(name, name);
         count++;
     }
-    if (count == 0) menu.AddItem("", "— باتی نیست —", ITEMDRAW_DISABLED);
+    if (count == 0) menu.AddItem("", "— ﺖﺴﯿﻧ ﯽﺗﺎﺑ —", ITEMDRAW_DISABLED);
     menu.ExitBackButton = true;
     menu.Display(client, 30);
 }
@@ -732,7 +732,7 @@ public int BotKickHandler(Menu menu, MenuAction action, int client, int itemNum)
         char name[64];
         menu.GetItem(itemNum, name, sizeof(name));
         ServerCommand("bot_kick \"%s\"", name);
-        PrintToChat(client, "[Server] بات %s حذف شد.", name);
+        PrintToChat(client, "[Server] ﺕﺎﺑ %s ﺪﺷ ﻑﺬﺣ.", name);
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }
@@ -741,11 +741,11 @@ public int BotKickHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowTeleportMenu(int client)
 {
     Menu menu = new Menu(TeleportMenuHandler);
-    menu.SetTitle("7. تلپورت منو:");
-    menu.AddItem("save",   "1. سیو لوکیشن");
-    menu.AddItem("tosaved","2. تلپورت پلیر به سیو لوکیشن");
-    menu.AddItem("p2p",    "3. تلپورت پلیر به پلیر");
-    menu.AddItem("back",   "<- برگشت");
+    menu.SetTitle("7. ﻮﻨﻣ ﺕﺭﻮﭙﻠﺗ:");
+    menu.AddItem("save",   "1. ﻦﺸﯿﮐﻮﻟ ﻮﯿﺳ");
+    menu.AddItem("tosaved","2. ﻦﺸﯿﮐﻮﻟ ﻮﯿﺳ ﻪﺑ ﺮﯿﻠﭘ ﺕﺭﻮﭙﻠﺗ");
+    menu.AddItem("p2p",    "3. ﺮﯿﻠﭘ ﻪﺑ ﺮﯿﻠﭘ ﺕﺭﻮﭙﻠﺗ");
+    menu.AddItem("back",   "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -758,7 +758,7 @@ public int TeleportMenuHandler(Menu menu, MenuAction action, int client, int ite
         if (StrEqual(info, "save")) {
             GetClientAbsOrigin(client, g_SavedLocation);
             g_HasSavedLocation = true;
-            PrintToChat(client, "[Server] لوکیشن سیو شد! ✅");
+            PrintToChat(client, "[Server] ﺪﺷ ﻮﯿﺳ ﻦﺸﯿﮐﻮﻟ! ");
         }
         else if (StrEqual(info, "tosaved")) ShowTpSavedMenu(client);
         else if (StrEqual(info, "p2p")) ShowTpP2PSrcMenu(client);
@@ -769,17 +769,17 @@ public int TeleportMenuHandler(Menu menu, MenuAction action, int client, int ite
 public void ShowTpSavedMenu(int client)
 {
     if (!g_HasSavedLocation) {
-        PrintToChat(client, "[Server] اول با گزینه ۱ لوکیشن سیو کن!");
+        PrintToChat(client, "[Server] ﻦﮐ ﻮﯿﺳ ﻦﺸﯿﮐﻮﻟ 1 ﻪﻨﯾﺰﮔ ﺎﺑ ﻝﻭﺍ!");
         ShowTeleportMenu(client);
         return;
     }
     Menu menu = new Menu(TpSavedHandler);
-    menu.SetTitle("تلپورت به سیو لوکیشن:");
-    menu.AddItem("all",   "1. آل پلیر (همه)");
-    menu.AddItem("bots",  "2. بات‌ها");
-    menu.AddItem("alive", "3. پلیرهای زنده");
-    menu.AddItem("one",   "4. یه پلیر خاص...");
-    menu.AddItem("back",  "<- برگشت");
+    menu.SetTitle("ﻦﺸﯿﮐﻮﻟ ﻮﯿﺳ ﻪﺑ ﺕﺭﻮﭙﻠﺗ:");
+    menu.AddItem("all",   "1. ﺮﯿﻠﭘ ﻝﺁ (ﻪﻤﻫ)");
+    menu.AddItem("bots",  "2. ﺎﻫﺕﺎﺑ");
+    menu.AddItem("alive", "3. ﻩﺪﻧﺯ ﯼﺎﻫﺮﯿﻠﭘ");
+    menu.AddItem("one",   "4. ﺹﺎﺧ ﺮﯿﻠﭘ ﻪﯾ...");
+    menu.AddItem("back",  "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -794,19 +794,19 @@ public int TpSavedHandler(Menu menu, MenuAction action, int client, int itemNum)
             for (int i = 1; i <= MaxClients; i++)
                 if (IsClientInGame(i) && IsPlayerAlive(i))
                     TeleportEntity(i, g_SavedLocation, NULL_VECTOR, NULL_VECTOR);
-            PrintToChatAll("[Server] همه به لوکیشن سیو شده تلپورت شدن.");
+            PrintToChatAll("[Server] ﻥﺪﺷ ﺕﺭﻮﭙﻠﺗ ﻩﺪﺷ ﻮﯿﺳ ﻦﺸﯿﮐﻮﻟ ﻪﺑ ﻪﻤﻫ.");
         }
         else if (StrEqual(info, "bots")) {
             for (int i = 1; i <= MaxClients; i++)
                 if (IsClientInGame(i) && IsFakeClient(i) && IsPlayerAlive(i))
                     TeleportEntity(i, g_SavedLocation, NULL_VECTOR, NULL_VECTOR);
-            PrintToChat(client, "[Server] بات‌ها تلپورت شدن.");
+            PrintToChat(client, "[Server] ﻥﺪﺷ ﺕﺭﻮﭙﻠﺗ ﺎﻫﺕﺎﺑ.");
         }
         else if (StrEqual(info, "alive")) {
             for (int i = 1; i <= MaxClients; i++)
                 if (IsClientInGame(i) && !IsFakeClient(i) && IsPlayerAlive(i))
                     TeleportEntity(i, g_SavedLocation, NULL_VECTOR, NULL_VECTOR);
-            PrintToChat(client, "[Server] پلیرهای زنده تلپورت شدن.");
+            PrintToChat(client, "[Server] ﻥﺪﺷ ﺕﺭﻮﭙﻠﺗ ﻩﺪﻧﺯ ﯼﺎﻫﺮﯿﻠﭘ.");
         }
         else if (StrEqual(info, "one")) {
             g_iAction[client] = ACT_TP_SAVED_ONE;
@@ -819,10 +819,10 @@ public int TpSavedHandler(Menu menu, MenuAction action, int client, int itemNum)
 public void ShowTpP2PSrcMenu(int client)
 {
     Menu menu = new Menu(TpP2PSrcHandler);
-    menu.SetTitle("کیا تلپورت بشن؟ (مبدا)");
-    menu.AddItem("-1", "1. ALL (همه)");
-    menu.AddItem("-2", "2. bots (بات‌ها)");
-    menu.AddItem("-3", "3. alive (زنده‌ها)");
+    menu.SetTitle("?ﻦﺸﺑ ﺕﺭﻮﭙﻠﺗ ﺎﯿﮐ (ﺍﺪﺒﻣ)");
+    menu.AddItem("-1", "1. ALL (ﻪﻤﻫ)");
+    menu.AddItem("-2", "2. bots (ﺎﻫﺕﺎﺑ)");
+    menu.AddItem("-3", "3. alive (ﺎﻫﻩﺪﻧﺯ)");
     // then individual players
     for (int i = 1; i <= MaxClients; i++) {
         if (!IsClientInGame(i)) continue;
@@ -856,17 +856,17 @@ public int TpP2PSrcHandler(Menu menu, MenuAction action, int client, int itemNum
 public void ShowSettingsMenu(int client)
 {
     Menu menu = new Menu(SettingsMenuHandler);
-    menu.SetTitle("8. تنظیمات خاص:");
+    menu.SetTitle("8. ﺹﺎﺧ ﺕﺎﻤﯿﻈﻨﺗ:");
     menu.AddItem("alltalk", "1. ALL TALK");
-    menu.AddItem("ff",      "2. فرندلی فایر");
-    menu.AddItem("ftime",   "3. فریز تایم (بازی بی‌نهایت)");
-    menu.AddItem("burn",    "4. بورن پلیر");
-    menu.AddItem("kill",    "5. پلیر دد");
-    menu.AddItem("weapons", "6. جایگزینی سلاح همه");
-    menu.AddItem("respawn", "7. ری‌اسپاون پلیر");
-    menu.AddItem("sethp",   "8. ست HP");
-    menu.AddItem("unburn",  "9. آن‌بورن پلیر");
-    menu.AddItem("back",    "<- برگشت");
+    menu.AddItem("ff",      "2. ﺮﯾﺎﻓ ﯽﻟﺪﻧﺮﻓ");
+    menu.AddItem("ftime",   "3. ﻢﯾﺎﺗ ﺰﯾﺮﻓ (ﺖﯾﺎﻬﻧﯽﺑ ﯼﺯﺎﺑ)");
+    menu.AddItem("burn",    "4. ﺮﯿﻠﭘ ﻥﺭﻮﺑ");
+    menu.AddItem("kill",    "5. ﺩﺩ ﺮﯿﻠﭘ");
+    menu.AddItem("weapons", "6. ﻪﻤﻫ ﺡﻼﺳ ﯽﻨﯾﺰﮕﯾﺎﺟ");
+    menu.AddItem("respawn", "7. ﺮﯿﻠﭘ ﻥﻭﺎﭙﺳﺍﯼﺭ");
+    menu.AddItem("sethp",   "8. ﺖﺳ HP");
+    menu.AddItem("unburn",  "9. ﺮﯿﻠﭘ ﻥﺭﻮﺑﻥﺁ");
+    menu.AddItem("back",    "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -880,23 +880,23 @@ public int SettingsMenuHandler(Menu menu, MenuAction action, int client, int ite
             ConVar cv = FindConVar("sv_alltalk");
             bool on = (cv == null) || !cv.BoolValue;
             ServerCommand("sv_alltalk %d", on ? 1 : 0);
-            PrintToChatAll("[Server] ALL TALK %s شد!", on ? "فعال" : "غیرفعال");
+            PrintToChatAll("[Server] ALL TALK %s ﺪﺷ!", on ? "ﻝﺎﻌﻓ" : "ﻝﺎﻌﻓﺮﯿﻏ");
         }
         else if (StrEqual(info, "ff")) {
             ConVar cv = FindConVar("mp_friendlyfire");
             bool on = (cv == null) || !cv.BoolValue;
             ServerCommand("mp_friendlyfire %d", on ? 1 : 0);
-            PrintToChatAll("[Server] فرندلی فایر %s شد!", on ? "فعال" : "غیرفعال");
+            PrintToChatAll("[Server] ﺮﯾﺎﻓ ﯽﻟﺪﻧﺮﻓ %s ﺪﺷ!", on ? "ﻝﺎﻌﻓ" : "ﻝﺎﻌﻓﺮﯿﻏ");
         }
         else if (StrEqual(info, "ftime")) {
             ConVar cv = FindConVar("mp_timelimit");
             bool infinite = (cv != null && cv.IntValue == 0);
             if (infinite) {
                 ServerCommand("mp_timelimit 30");
-                PrintToChatAll("[Server] تایم بازی محدود شد (30 دقیقه).");
+                PrintToChatAll("[Server] ﺪﺷ ﺩﻭﺪﺤﻣ ﯼﺯﺎﺑ ﻢﯾﺎﺗ (30 ﻪﻘﯿﻗﺩ).");
             } else {
                 ServerCommand("mp_timelimit 0");
-                PrintToChatAll("[Server] تایم بازی بی‌نهایت شد! ♾️");
+                PrintToChatAll("[Server] ﺪﺷ ﺖﯾﺎﻬﻧﯽﺑ ﯼﺯﺎﺑ ﻢﯾﺎﺗ! ");
             }
         }
         else if (StrEqual(info, "burn"))    { g_iAction[client] = ACT_BURN; ShowPlayerList(client, FLT_ALIVE); }
@@ -912,10 +912,10 @@ public int SettingsMenuHandler(Menu menu, MenuAction action, int client, int ite
 public void ShowKillMenu(int client)
 {
     Menu menu = new Menu(KillMenuHandler);
-    menu.SetTitle("پلیر دد:");
-    menu.AddItem("all",  "1. آل پلیر (همه)");
-    menu.AddItem("one",  "2. یه پلیر خاص...");
-    menu.AddItem("back", "<- برگشت");
+    menu.SetTitle("ﺩﺩ ﺮﯿﻠﭘ:");
+    menu.AddItem("all",  "1. ﺮﯿﻠﭘ ﻝﺁ (ﻪﻤﻫ)");
+    menu.AddItem("one",  "2. ﺹﺎﺧ ﺮﯿﻠﭘ ﻪﯾ...");
+    menu.AddItem("back", "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -929,7 +929,7 @@ public int KillMenuHandler(Menu menu, MenuAction action, int client, int itemNum
             for (int i = 1; i <= MaxClients; i++)
                 if (IsClientInGame(i) && IsPlayerAlive(i) && !IsFakeClient(i))
                     ForcePlayerSuicide(i);
-            PrintToChatAll("[Server] همه پلیرها کشته شدن! 💀");
+            PrintToChatAll("[Server] ﻥﺪﺷ ﻪﺘﺸﮐ ﺎﻫﺮﯿﻠﭘ ﻪﻤﻫ! ");
         }
         else if (StrEqual(info, "one")) {
             g_iAction[client] = ACT_KILLONE;
@@ -942,7 +942,7 @@ public int KillMenuHandler(Menu menu, MenuAction action, int client, int itemNum
 public void ShowWeaponList(int client)
 {
     Menu menu = new Menu(WeaponListHandler);
-    menu.SetTitle("سلاح جایگزین را انتخاب کن:");
+    menu.SetTitle("ﻦﮐ ﺏﺎﺨﺘﻧﺍ ﺍﺭ ﻦﯾﺰﮕﯾﺎﺟ ﺡﻼﺳ:");
     for (int i = 0; i < sizeof(g_Weapons); i++) {
         char label[32];
         strcopy(label, sizeof(label), g_Weapons[i][7]); // strip "weapon_"
@@ -972,7 +972,7 @@ public int WeaponListHandler(Menu menu, MenuAction action, int client, int itemN
             }
             GivePlayerItem(i, weapon);
         }
-        PrintToChatAll("[Server] سلاح همه شد: %s 🔫", weapon[7]);
+        PrintToChatAll("[Server] ﺪﺷ ﻪﻤﻫ ﺡﻼﺳ: %s ", weapon[7]);
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }
@@ -980,13 +980,13 @@ public int WeaponListHandler(Menu menu, MenuAction action, int client, int itemN
 public void ShowHpMenu(int client)
 {
     Menu menu = new Menu(HpMenuHandler);
-    menu.SetTitle("HP همه پلیرها:");
+    menu.SetTitle("HP ﺎﻫﺮﯿﻠﭘ ﻪﻤﻫ:");
     menu.AddItem("100",  "100");
     menu.AddItem("200",  "200");
     menu.AddItem("500",  "500");
     menu.AddItem("1000", "1000");
     menu.AddItem("5000", "5000");
-    menu.AddItem("back", "<- برگشت");
+    menu.AddItem("back", "<- ﺖﺸﮔﺮﺑ");
     menu.Display(client, 30);
 }
 
@@ -1000,7 +1000,7 @@ public int HpMenuHandler(Menu menu, MenuAction action, int client, int itemNum)
         for (int i = 1; i <= MaxClients; i++)
             if (IsClientInGame(i) && IsPlayerAlive(i))
                 SetEntityHealth(i, hp);
-        PrintToChatAll("[Server] HP همه شد: %d ❤️", hp);
+        PrintToChatAll("[Server] HP ﺪﺷ ﻪﻤﻫ: %d ", hp);
     } else if (action == MenuAction_End) delete menu;
     return 0;
 }

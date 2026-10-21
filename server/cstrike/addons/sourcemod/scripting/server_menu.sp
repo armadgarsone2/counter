@@ -4,10 +4,10 @@
  * In-game menu opened with:  !smenu   (or sm_smenu in console)
  *
  * Menu items:
- *   💎 VIP          - shows VIP perks (buy from server admin)
- *   📜 قوانین سرور   - server rules (edit RULES below before compiling)
- *   ⚡ دستورات VIP   - only visible to VIPs (flag "o")
- *   ℹ️ اطلاعات سرور  - map, players, timeleft
+ * VIP - shows VIP perks (buy from server admin)
+ * ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ - server rules (edit RULES below before compiling)
+ * ﺕﺍﺭﻮﺘﺳﺩ VIP - only visible to VIPs (flag "o")
+ *  ﺭﻭﺮﺳ ﺕﺎﻋﻼﻃﺍ  - map, players, timeleft
  *
  * Install:
  *  1. Edit RULES / convar defaults below if you want
@@ -23,7 +23,7 @@
 // ---------------- edit your rules here ----------------
 char g_Rules[][] = {
     "1. ﻉﻮﻨﻤﻣ ﺎﻫﺮﯿﻠﭘ ﻪﺑ ﻦﯿﻫﻮﺗ ﻭ ﯽﺷﺎﺤﻓ",
-    "2. ﻉﻮﻨﻤﻣ ﮒﺎﺑ ﺯﺍ ﻩﺩﺎﻔﺘﺳﺍﺀﻮﺳ ﻭ ﺖﭙﯾﺮﮑﺳﺍ ،ﺖﯿﭼ",
+    "2. ﻉﻮﻨﻤﻣ ﮒﺎﺑ ﺯﺍ ﻩﺩﺎﻔﺘﺳﺍﺀﻮﺳ ﻭ ﺖﭙﯾﺮﮑﺳﺍ ,ﺖﯿﭼ",
     "3. ﻉﻮﻨﻤﻣ ﺖﭼ ﻭ ﻥﻮﻓﻭﺮﮑﯿﻣ ﻢﭙﺳﺍ",
     "4. ﻉﻮﻨﻤﻣ ﻒﯾﺮﺣ ﻥﻭﺎﭙﺳﺍ ﺖﺸﭘ ﻥﺩﺮﮐ ﭗﻤﮐ",
     "5. ﺭﺍﺬﺑ ﻡﺍﺮﺘﺣﺍ ﺎﻫﻦﯿﻣﺩﺍ ﻪﺑ"
@@ -83,13 +83,13 @@ public Action Cmd_Menu(int client, int args)
 void ShowMainMenu(int client)
 {
     Menu menu = new Menu(MainMenuHandler);
-    menu.SetTitle("🎮 ﺭﻭﺮﺳ ﯼﻮﻨﻣ\n ");
-    menu.AddItem("rules", "📜 ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ");
+    menu.SetTitle(" ﺭﻭﺮﺳ ﯼﻮﻨﻣ\n ");
+    menu.AddItem("rules", " ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ");
 
     if (CheckCommandAccess(client, "sm_menu_vip", ADMFLAG_CUSTOM1))
-        menu.AddItem("vipcmds", "⚡ ﺕﺍﺭﻮﺘﺳﺩ VIP");
+        menu.AddItem("vipcmds", " ﺕﺍﺭﻮﺘﺳﺩ VIP");
 
-    menu.AddItem("info", "ℹ️ ﺭﻭﺮﺳ ﺕﺎﻋﻼﻃﺍ");
+    menu.AddItem("info", "ﺭﻭﺮﺳ ﺕﺎﻋﻼﻃﺍ");
     menu.ExitButton = true;
     menu.Display(client, 30);
 }
@@ -123,18 +123,18 @@ void ShowVipInfo(int client)
     char tag[32];
     g_cvTag.GetString(tag, sizeof(tag));
 
-    PrintToChat(client, "%s 💎 \x04VIP ﺭﻭﺮﺳ", tag);
+    PrintToChat(client, "%s  \x04VIP ﺭﻭﺮﺳ", tag);
     PrintToChat(client, "%s ﺕﺎﻧﺎﮑﻣﺍ:", tag);
-    PrintToChat(client, "  ✈️  noclip ﺭﻮﺘﺳﺩ ﺎﺑ \x04!vn", tag);
-    PrintToChat(client, "  🛡️  godmode ﺭﻮﺘﺳﺩ ﺎﺑ \x04!vg", tag);
-    PrintToChat(client, "  🔫  ﺭﻮﺘﺳﺩ ﺎﺑ ﺎﻫﻪﺤﻠﺳﺍ ﯼﻪﻤﻫ \x04!vw", tag);
+    PrintToChat(client, "    noclip ﺭﻮﺘﺳﺩ ﺎﺑ \x04!vn", tag);
+    PrintToChat(client, "    godmode ﺭﻮﺘﺳﺩ ﺎﺑ \x04!vg", tag);
+    PrintToChat(client, "    ﺭﻮﺘﺳﺩ ﺎﺑ ﺎﻫﻪﺤﻠﺳﺍ ﯼﻪﻤﻫ \x04!vw", tag);
 }
 
 // ---------------- rules ----------------
 void ShowRules(int client)
 {
     Menu menu = new Menu(SubMenuHandler);
-    menu.SetTitle("📜 ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ\n ");
+    menu.SetTitle(" ﺭﻭﺮﺳ ﻦﯿﻧﺍﻮﻗ\n ");
 
     char item[128];
     for (int i = 0; i < sizeof(g_Rules); i++)
@@ -143,7 +143,7 @@ void ShowRules(int client)
         menu.AddItem("", item, ITEMDRAW_DISABLED);
     }
 
-    menu.AddItem("back", "🔙 ﺖﺸﮔﺯﺎﺑ");
+    menu.AddItem("back", " ﺖﺸﮔﺯﺎﺑ");
     menu.ExitButton = false;
     menu.Display(client, 30);
 }
@@ -152,13 +152,13 @@ void ShowRules(int client)
 void ShowVipCmds(int client)
 {
     Menu menu = new Menu(SubMenuHandler);
-    menu.SetTitle("⚡ ﺕﺍﺭﻮﺘﺳﺩ VIP\n ");
+    menu.SetTitle(" ﺕﺍﺭﻮﺘﺳﺩ VIP\n ");
 
     menu.AddItem("", "!vn  (ﺎﯾ sm_vn) — ﻦﺷﻭﺭ/ﺵﻮﻣﺎﺧ noclip", ITEMDRAW_DISABLED);
     menu.AddItem("", "!vg  (ﺎﯾ sm_vg) — ﻦﺷﻭﺭ/ﺵﻮﻣﺎﺧ godmode", ITEMDRAW_DISABLED);
     menu.AddItem("", "!vw  (ﺎﯾ sm_vw) — ﺎﻫﻪﺤﻠﺳﺍ ﯼﻪﻤﻫ ﻦﺘﻓﺮﮔ", ITEMDRAW_DISABLED);
 
-    menu.AddItem("back", "🔙 ﺖﺸﮔﺯﺎﺑ");
+    menu.AddItem("back", " ﺖﺸﮔﺯﺎﺑ");
     menu.ExitButton = false;
     menu.Display(client, 30);
 }
@@ -175,12 +175,12 @@ void ShowInfo(int client)
         if (IsClientInGame(i) && !IsFakeClient(i))
             players++;
 
-    PrintToChat(client, "%s ℹ️ ﯽﻠﻌﻓ ﭗﻣ: \x04%s", tag, map);
-    PrintToChat(client, "%s 👥 ﺎﻫﺮﯿﻠﭘ: \x04%d\x01 ﺯﺍ %d", tag, players, max);
+    PrintToChat(client, "%s ﯽﻠﻌﻓ ﭗﻣ: \x04%s", tag, map);
+    PrintToChat(client, "%s  ﺎﻫﺮﯿﻠﭘ: \x04%d\x01 ﺯﺍ %d", tag, players, max);
 
     int timeleft;
     if (GetMapTimeLeft(timeleft) && timeleft > 0)
-        PrintToChat(client, "%s ⏱️ ﭗﻣ ﻩﺪﻧﺎﻣﯽﻗﺎﺑ ﻥﺎﻣﺯ: \x04%d\x01 ﻪﻘﯿﻗﺩ", tag, timeleft / 60);
+        PrintToChat(client, "%s ﭗﻣ ﻩﺪﻧﺎﻣﯽﻗﺎﺑ ﻥﺎﻣﺯ: \x04%d\x01 ﻪﻘﯿﻗﺩ", tag, timeleft / 60);
 }
 
 public int SubMenuHandler(Menu menu, MenuAction action, int client, int item)

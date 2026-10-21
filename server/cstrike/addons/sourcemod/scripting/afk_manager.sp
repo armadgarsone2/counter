@@ -97,13 +97,13 @@ public Action Timer_CheckAFK(Handle timer)
         if (idle >= moveAfter)
         {
             ChangeClientTeam(i, 1);
-            PrintToChatAll("\x04💤 %N \x01ﺮﻃﺎﺧﻪﺑ AFK ﺪﺷ ﻞﻘﺘﻨﻣ ﺮﮔﺎﺷﺎﻤﺗ ﻪﺑ ﻥﺩﻮﺑ", i);
+            PrintToChatAll("\x04 %N \x01ﺮﻃﺎﺧﻪﺑ AFK ﺪﺷ ﻞﻘﺘﻨﻣ ﺮﮔﺎﺷﺎﻤﺗ ﻪﺑ ﻥﺩﻮﺑ", i);
             Touch(i);
         }
         else if (idle >= warnAfter && !g_bWarned[i])
         {
             g_bWarned[i] = true;
-            PrintToChat(i, "\x02⚠️ AFK ﯽﺘﺴﻫ! \x01ﺎﺗ %d ﺮﮔﺎﺷﺎﻤﺗ ﯼﺮﯿﻣ ﯼﺭﻮﺨﻧ ﻥﻮﮑﺗ ﻪﮕﯾﺩ ﯼﻪﯿﻧﺎﺛ",
+            PrintToChat(i, "\x02 AFK ﯽﺘﺴﻫ! \x01ﺎﺗ %d ﺮﮔﺎﺷﺎﻤﺗ ﯼﺮﯿﻣ ﯼﺭﻮﺨﻧ ﻥﻮﮑﺗ ﻪﮕﯾﺩ ﯼﻪﯿﻧﺎﺛ",
                 RoundToNearest(moveAfter - idle));
         }
     }
