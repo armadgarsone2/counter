@@ -3,6 +3,7 @@
 [🇮🇷 فارسی](README.md) • [🇬🇧 English](README.en.md) • [🇷🇺 Русский](README.ru.md) • [🇹🇷 Türkçe](README.tr.md)
 
 <p align="center"><img src="assets/banner.jpg" alt="Sefidan | Wh1Tes — Counter-Strike: Source v34" width="100%"></p>
+<p align="center">🌐 <a href="https://armadgarsone2.github.io/counter/tr/">Sunucu Web Sitesi</a></p>
 
 
 # 🦁 Sefidan | Wh1Tes
