@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سفیدان | Wh1Tes — Counter-Strike: Source v34</title>
+<meta name="description" content="سرور کانتر استرایک سورس v34 سفیدان — مدل‌های واقعی Modern Warfare، پول مکس هر راند، فریزتایم کم. Counter-Strike: Source v34 dedicated server with real MW player models.">
+<style>
+  :root{ --bg:#0b0f14; --card:#131a22; --line:#223041; --txt:#e8edf2; --mut:#93a5b5; --gold:#e8a33d; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:Tahoma,Vazirmatn,system-ui,sans-serif;line-height:1.9}
+  .wrap{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+  .hero img{width:100%;border-radius:14px;display:block}
+  .langs{text-align:center;margin:14px 0 4px;color:var(--mut);font-size:14px}
+  .langs a{color:var(--mut);text-decoration:none;margin:0 6px}
+  .langs a:hover{color:var(--gold)}
+  h1{text-align:center;font-size:34px;margin:10px 0 2px}
+  .tag{text-align:center;color:var(--mut);margin-bottom:26px}
+  .connect{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;margin-bottom:26px}
+  .ip{font-family:Consolas,monospace;font-size:24px;direction:ltr;display:block;color:#fff;letter-spacing:1px}
+  .btn{display:inline-block;margin:12px 6px 0;background:var(--gold);color:#14100a;font-weight:bold;
+       padding:10px 26px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-size:16px}
+  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-bottom:26px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .feat b{color:var(--gold)}
+  h2{margin:30px 0 12px;font-size:22px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden}
+  td,th{padding:10px 14px;border-bottom:1px solid var(--line);text-align:right}
+  th{color:var(--gold)}
+  .rules{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 22px}
+  footer{text-align:center;color:var(--mut);margin-top:36px;font-size:14px}
+  footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <img src="https://raw.githubusercontent.com/armadgarsone2/counter/main/assets/banner.jpg" alt="Sefidan | Wh1Tes — Counter-Strike: Source v34">
+  </div>
+  <div class="langs">
+    <a href="https://github.com/armadgarsone2/counter">🇮🇷 فارسی</a> •
+    <a href="https://github.com/armadgarsone2/counter/blob/main/README.en.md">🇬🇧 English</a> •
+    <a href="https://github.com/armadgarsone2/counter/blob/main/README.ru.md">🇷🇺 Русский</a> •
+    <a href="https://github.com/armadgarsone2/counter/blob/main/README.tr.md">🇹🇷 Türkçe</a>
+  </div>
+
+  <h1>🦁 سفیدان | Wh1Tes</h1>
+  <p class="tag">سرور رفقای Counter-Strike: Source v34 — مدل‌های واقعی، پول مکس، بدون تعارف</p>
+
+  <div class="connect">
+    <span class="ip">connect 13.53.151.178:27015</span>
+    <a class="btn" href="steam://connect/13.53.151.178:27015">🎮 اتصال با یه کلیک</a>
+    <button class="btn ghost" onclick="navigator.clipboard.writeText('connect 13.53.151.178:27015');this.textContent='کپی شد ✅'">📋 کپی دستور اتصال</button>
+    <p style="color:var(--mut);font-size:13px;margin-top:10px">دکمه‌ی اتصال مستقیم بازی رو باز می‌کنه؛ یا دستور رو تو کنسول بازی پیست کن.</p>
+  </div>
+
+  <div class="grid">
+    <div class="feat"><b>🎭 مدل‌های واقعی پلیر</b><br>Ghost ،TF141 ،Gorka ،Juggernaut و Spetsnaz — مدل واقعی، نه رنگی‌رنگی</div>
+    <div class="feat"><b>💰 پول مکس هر راند</b><br>شروع هر راند ۱۶٬۰۰۰ دلار برای همه</div>
+    <div class="feat"><b>🎯 نمایش دمیج زنده</b><br>HP و Armor کم‌شده، وسط صفحه زیر کراس‌هیر</div>
+    <div class="feat"><b>💣 Bomb Info</b><br>تایمر C4 + فاصله تا بمب + دمیج احتمالی</div>
+    <div class="feat"><b>🌫️ دود غلیظ</b><br>دودزایی که واقعاً دید رو می‌بنده</div>
+    <div class="feat"><b>🏆 رنک و آمار</b><br>با دستور !rank تو بازی</div>
+  </div>
+
+  <h2>🎭 مدل‌ها</h2>
+  <table>
+    <tr><th>تیم</th><th>کلاس</th><th>مدل</th></tr>
+    <tr><td>CT</td><td>GIGN</td><td>👻 MW2 Ghost</td></tr>
+    <tr><td>CT</td><td>GSG9 / SAS / Urban</td><td>🎖️ TF141</td></tr>
+    <tr><td>T</td><td>Phoenix</td><td>🪖 Gorka</td></tr>
+    <tr><td>T</td><td>Leet</td><td>🔫 Russian Mercenary</td></tr>
+    <tr><td>T</td><td>Guerilla</td><td>🐗 Juggernaut</td></tr>
+    <tr><td>T</td><td>Arctic</td><td>❄️ MW3 Spetsnaz</td></tr>
+  </table>
+
+  <h2>📜 قوانین خونه</h2>
+  <div class="rules">
+    ۱. فحاشی و توهین ممنوع &nbsp;•&nbsp; ۲. چیت و اسکریپت ممنوع &nbsp;•&nbsp; ۳. اسپم ممنوع<br>
+    ۴. کمپ پشت اسپاون حریف ممنوع &nbsp;•&nbsp; ۵. احترام به ادمین‌ها
+  </div>
+
+  <footer>
+    سرور دوستانه و غیرتجاری — ساخته‌شده رو یه سرور کوچیک تو استکهلم 🇸🇪<br>
+    <a href="https://github.com/armadgarsone2/counter">📦 ریپوی کامل سرور رو گیت‌هاب</a>
+  </footer>
+</div>
+</body>
+</html>
