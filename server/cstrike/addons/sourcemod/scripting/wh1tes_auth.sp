@@ -14,12 +14,13 @@ public Plugin myinfo = {
     name = "Wh1Tes Auth",
     author = "Wh1Tes",
     description = "Manual admin/VIP binding for the No-Steam build (PutInServer)",
-    version = "1.0.1"
+    version = "1.2.0"
 };
 
 char g_sRootName[64];
 char g_sRootPw[64];
 char g_sVipIp[32];
+bool g_bPwLogged[MAXPLAYERS + 1];
 
 public void OnPluginStart()
 {
@@ -36,6 +37,7 @@ public void OnPluginStart()
 
     LogMessage("[Wh1Tes Auth] ready (root name set: %s, vip ip set: %s)",
         g_sRootName[0] ? "yes" : "NO", g_sVipIp[0] ? "yes" : "NO");
+    CreateTimer(15.0, Timer_Rebind, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 
     // Late load: players already in game (e.g. after a plugin reload)
     // never re-fire OnClientPutInServer, so bind them from here too.
@@ -44,9 +46,31 @@ public void OnPluginStart()
             CreateTimer(1.5, Timer_Bind, GetClientUserId(i), TIMER_FLAG_NO_MAPCHANGE);
 }
 
+public void OnMapStart()
+{
+    CreateTimer(15.0, Timer_Rebind, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+}
+
+public Action Timer_Rebind(Handle timer)
+{
+    // Continuous invariant (v1.2.0): the bot's sm_reloadadmins dumps
+    // the admin cache and unbinds in-game admins, and a player may
+    // setinfo _password only after joining. Re-check the unbound.
+    for (int i = 1; i <= MaxClients; i++)
+        if (IsClientInGame(i) && !IsFakeClient(i)
+            && GetUserAdmin(i) == INVALID_ADMIN_ID)
+            BindClient(i);
+    return Plugin_Continue;
+}
+
 public void OnClientPutInServer(int client)
 {
     CreateTimer(1.5, Timer_Bind, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
+}
+
+public void OnClientDisconnect(int client)
+{
+    g_bPwLogged[client] = false;
 }
 
 public Action Timer_Bind(Handle timer, int userid)
@@ -98,4 +122,42 @@ void BindClient(int client)
                 LogMessage("[Wh1Tes Auth] VIP granted to %N", client);
         }
     }
+
+    // Generic admins_simple.ini binding (v1.1.0): the flatfile reader
+    // creates AdminIds for every ini entry, but on this build the core
+    // never binds them (authorization never completes). Bind them here:
+    // find the client's AdminId by name identity, else by IP identity,
+    // and enforce the entry password (when it has one) against the
+    // client's _password before SetUserAdmin.
+    if (GetUserAdmin(client) != INVALID_ADMIN_ID)
+        return;
+
+    AdminId ini = FindAdminByIdentity("name", name);
+    if (ini == INVALID_ADMIN_ID)
+    {
+        char ip2[32];
+        GetClientIP(client, ip2, sizeof(ip2));
+        ini = FindAdminByIdentity("ip", ip2);
+    }
+    if (ini == INVALID_ADMIN_ID)
+        return;
+
+    char need[64];
+    bool pwreq = GetAdminPassword(ini, need, sizeof(need)) && need[0];
+    if (pwreq)
+    {
+        char pw2[64];
+        GetClientInfo(client, "_password", pw2, sizeof(pw2));
+        if (!StrEqual(pw2, need))
+        {
+            if (!g_bPwLogged[client])
+            {
+                g_bPwLogged[client] = true;
+                LogMessage("[Wh1Tes Auth] %N matched an admin entry but the password did not match", client);
+            }
+            return;
+        }
+    }
+    if (SetUserAdmin(client, ini, true))
+        LogMessage("[Wh1Tes Auth] INI admin granted to %N", client);
 }

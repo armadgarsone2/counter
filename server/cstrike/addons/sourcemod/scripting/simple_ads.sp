@@ -34,7 +34,7 @@ public Plugin myinfo =
     name        = "Simple Ads",
     author      = "Server Owner",
     description = "Rotating colored chat advertisements",
-    version     = "1.0.0",
+    version     = "1.0.1",
     url         = ""
 };
 
@@ -46,6 +46,16 @@ public void OnPluginStart()
     g_cvInterval.AddChangeHook(OnCvarChanged);
     g_cvEnabled.AddChangeHook(OnCvarChanged);
     AutoExecConfig(true, "simple_ads");
+}
+
+public void OnMapStart()
+{
+    // The ad timer is TIMER_FLAG_NO_MAPCHANGE: the runtime kills it
+    // during the map transition, leaving g_hTimer with a stale handle
+    // that RestartTimer() would KillTimer() ("Invalid timer handle"
+    // on every map change). By OnMapStart the old timer is gone —
+    // drop the handle here.
+    g_hTimer = null;
 }
 
 public void OnConfigsExecuted()
