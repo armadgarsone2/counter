@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$translucent" 		"1"
+	"$basetexture" 		"overlays/moder_shop/kill_overlay_m2/tt/tt_1"
+	"$no_fullbright" 	"1"
+	"$ignorez" 			"1"
+}

@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+$baseTexture "models\player\vad36_professional\2020\tm_professional_head_varf"
+$bumpmap "models\player\vad36_professional\2020\tm_professional_head_normal_varf"
+$nodecal 1
+$nocull 1
+}
+

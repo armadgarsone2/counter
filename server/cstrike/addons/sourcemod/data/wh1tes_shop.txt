@@ -1,0 +1,7 @@
+"shop"
+{
+	"Wh1Tes ` AraSh"
+	{
+		"T"		"models/player/merc/t_leet.mdl"
+	}
+}

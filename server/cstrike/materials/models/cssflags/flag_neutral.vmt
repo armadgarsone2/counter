@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\cssflags\flag_neutral"
+	"$nocull" "1"
+}

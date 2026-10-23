@@ -1,5 +1,4 @@
 #pragma semicolon 1
-#pragma newdecls required
 #include <sourcemod>
 #include <sdktools>
 
@@ -7,8 +6,8 @@ public Plugin myinfo =
 {
 	name        = "Wh1Tes Round Money",
 	author      = "Server Owner",
-	description = "Classic rules: max money each round, no freeze time",
-	version     = "1.1.0",
+	description = "Classic rules: refill money each round (freezetime owned by mode/config)",
+	version     = "1.2.0",
 	url         = ""
 };
 
@@ -24,9 +23,11 @@ public void OnPluginStart()
 
 void ApplyClassic()
 {
-	ConVar fz = FindConVar("mp_freezetime");
-	if (fz != null)
-		fz.SetInt(0);
+	// 1.2.0: no longer touches mp_freezetime (it zeroed the configured
+	// freeze time on every round start), and startmoney is only enforced
+	// in the Classic context (wh1tes_maxmoney=1) so Match mode's 800 wins.
+	if (g_Cvar == null || !g_Cvar.BoolValue)
+		return;
 	ConVar sm = FindConVar("mp_startmoney");
 	if (sm != null)
 		sm.SetInt(16000);

@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+$baseTexture "models\player\vad36_professional\2020\tm_professional_body_varj"
+$bumpmap "models\player\vad36_professional\2020\tm_professional_body_normal_varj"
+$rimmask 1
+}
+

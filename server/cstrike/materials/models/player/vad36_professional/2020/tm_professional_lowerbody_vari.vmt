@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+$baseTexture "models\player\vad36_professional\2020\tm_professional_lowerbody_vari"
+$bumpmap "models\player\vad36_professional\2020\tm_professional_lowerbody_vari_normal"
+$rimmask 1
+$phongBoost 10
+}
+

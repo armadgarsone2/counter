@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+$baseTexture "models\player\vad36_professional\2020\w_t_base_fullfinger_glove"
+$bumpmap "models\player\vad36_professional\2020\w_t_base_fullfinger_glove_normal"
+
+$nodecal 1
+}
+

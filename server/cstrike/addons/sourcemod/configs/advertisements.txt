@@ -28,4 +28,9 @@
         "type"      "C"
         "text"      "{ORANGE}Fast download enabled{DEFAULT} -- custom skins load automatically"
     }
+    "6"
+    {
+        "type"      "C"
+        "text"      "Made by Ali"
+    }
 }

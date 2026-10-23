@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+$baseTexture "models\player\vad36_swat\2020\ctm_swat_leader_hair"
+$bumpmap "models\player\vad36_swat\2020\ctm_swat_leader_hair_normal"
+$alphatest 1
+
+$nocull 1
+}
+

@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+$baseTexture "models\player\vad36_swat\2020\ctm_swat_gasmask_helmet_visor"
+ //	"$envmap"		"env_cubemap"
+	 $translucent  1
+	 $nocull 1
+}
+

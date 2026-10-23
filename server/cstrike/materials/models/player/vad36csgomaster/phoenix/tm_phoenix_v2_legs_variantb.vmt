@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\player\vad36csgomaster\phoenix\tm_phoenix_v2_legs_variantb"
+	$envmap env_cubemap
+	$envmaptint "[ .01 .01 .02 ]"
+	$normalmapalphaenvmapmask 1
+	"$bumpmap" "models\player\vad36csgomaster\phoenix\tm_phoenix_legs_normal"
+}

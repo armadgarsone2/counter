@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$translucent" 		"1"
+	"$basetexture" 		"overlays/moder_shop/score_bg2"
+	"$no_fullbright" 	"1"
+	"$ignorez" 			"1"
+}

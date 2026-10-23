@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/recharger/suit_charger001_sheet"
+	"$surfaceprop" "metal"
+	"$selfillum" "1"
+	$nocull 1
+}

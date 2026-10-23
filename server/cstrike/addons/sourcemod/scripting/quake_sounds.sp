@@ -19,6 +19,10 @@
 #define MULTI_WINDOW 4.0   // seconds between kills to count as multi-kill
 #define SPREE_KILLS  5     // kill streak for Killing Spree
 #define RAMPAGE_KILLS 8    // kill streak for Rampage
+#define DOMINATING_KILLS 11  // kill streak for Dominating
+#define UNSTOPPABLE_KILLS 14 // kill streak for Unstoppable
+#define GODLIKE_KILLS 17     // kill streak for Godlike
+#define WICKEDSICK_KILLS 20  // kill streak for Wicked Sick
 
 char g_sSounds[][] = {
     "quake/firstblood.mp3",
@@ -28,7 +32,15 @@ char g_sSounds[][] = {
     "quake/multikill.mp3",
     "quake/killingspree.mp3",
     "quake/rampage.mp3",
-    "quake/humiliation.mp3"
+    "quake/humiliation.mp3",
+    "quake/dominating.mp3",
+    "quake/unstoppable.mp3",
+    "quake/godlike.mp3",
+    "quake/wickedsick.mp3",
+    "quake/ultrakill.mp3",
+    "quake/monsterkill.mp3",
+    "quake/ludicrouskill.mp3",
+    "quake/holyshit.mp3"
 };
 
 ConVar g_cvEnabled;
@@ -176,10 +188,30 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
         PlayToAll("quake/triplekill.mp3");
         PrintToChatAll("\x04 Triple Kill! \x03%N", attacker);
     }
-    else if (g_iMulti[attacker] >= 4)
+    else if (g_iMulti[attacker] == 4)
     {
         PlayToAll("quake/multikill.mp3");
         PrintToChatAll("\x04 MULTI KILL x%d! \x03%N", g_iMulti[attacker], attacker);
+    }
+    else if (g_iMulti[attacker] == 5)
+    {
+        PlayToAll("quake/ultrakill.mp3");
+        PrintToChatAll("\x04 ULTRA KILL x%d! \x03%N", g_iMulti[attacker], attacker);
+    }
+    else if (g_iMulti[attacker] == 6)
+    {
+        PlayToAll("quake/monsterkill.mp3");
+        PrintToChatAll("\x04 MONSTER KILL x%d! \x03%N", g_iMulti[attacker], attacker);
+    }
+    else if (g_iMulti[attacker] == 7)
+    {
+        PlayToAll("quake/ludicrouskill.mp3");
+        PrintToChatAll("\x04 LUDICROUS KILL x%d! \x03%N", g_iMulti[attacker], attacker);
+    }
+    else if (g_iMulti[attacker] >= 8)
+    {
+        PlayToAll("quake/holyshit.mp3");
+        PrintToChatAll("\x04 HOLY SHIT x%d! \x03%N", g_iMulti[attacker], attacker);
     }
 
     // ---- streaks ----
@@ -192,5 +224,25 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
     {
         PlayToAll("quake/rampage.mp3");
         PrintToChatAll("\x04 RAMPAGE! \x03%N \x01(%d ﻢﻫ ﺮﺳ ﺖﺸﭘ ﻞﯿﮐ)", attacker, g_iStreak[attacker]);
+    }
+    else if (g_iStreak[attacker] == DOMINATING_KILLS)
+    {
+        PlayToAll("quake/dominating.mp3");
+        PrintToChatAll("\x04 DOMINATING! \x03%N \x01(%d kills in a row)", attacker, g_iStreak[attacker]);
+    }
+    else if (g_iStreak[attacker] == UNSTOPPABLE_KILLS)
+    {
+        PlayToAll("quake/unstoppable.mp3");
+        PrintToChatAll("\x04 UNSTOPPABLE! \x03%N \x01(%d kills in a row)", attacker, g_iStreak[attacker]);
+    }
+    else if (g_iStreak[attacker] == GODLIKE_KILLS)
+    {
+        PlayToAll("quake/godlike.mp3");
+        PrintToChatAll("\x04 GODLIKE! \x03%N \x01(%d kills in a row)", attacker, g_iStreak[attacker]);
+    }
+    else if (g_iStreak[attacker] == WICKEDSICK_KILLS)
+    {
+        PlayToAll("quake/wickedsick.mp3");
+        PrintToChatAll("\x04 WICKED SICK! \x03%N \x01(%d kills in a row)", attacker, g_iStreak[attacker]);
     }
 }

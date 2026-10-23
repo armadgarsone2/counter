@@ -6,7 +6,7 @@
 #include <sdkhooks>
 
 /*
- * Wh1Tes Modes v0.1 (DRAFT — compile with SourceMod 1.9, test on server before calling it done)
+ * Wh1Tes Modes v0.2 — compile with SourceMod 1.9, test on server before calling it done)
  *
  * Admin-only game-mode switcher. Admin binds a key:  bind j "sm_mode"
  * Opens a menu; picking a mode applies it instantly (cvars set from inside the
@@ -44,19 +44,35 @@ public Plugin myinfo = {
     name = "Wh1Tes Modes",
     author = "Wh1Tes",
     description = "Admin one-key game mode switcher (J menu)",
-    version = "0.1.0",
+    version = "0.3.3",
     url = ""
 };
 
 ConVar g_cvTeamVoice;
+ConVar g_cvCurMode;
 
 public void OnPluginStart()
 {
     RegAdminCmd("sm_mode", Cmd_ModeMenu, ADMFLAG_GENERIC, "Open the game mode menu");
     RegAdminCmd("sm_teamvoice", Cmd_TeamVoice, ADMFLAG_GENERIC, "Toggle match-mode team voice on/off");
+    RegServerCmd("sm_botmode", Cmd_BotMode, "Query/set game mode from the server console (Telegram bot)");
     g_cvTeamVoice = CreateConVar("wh1tes_teamvoice", "1", "Match mode: 1 = team-only voice, 0 = alltalk stays on");
+    // read by wh1tes_killoverlay: match mode uses band-merged medal textures
+    g_cvCurMode = CreateConVar("wh1tes_curmode", "0", "Current Wh1Tes mode index (set by ApplyMode)");
     HookEvent("round_start", Event_RoundStart);
     HookEvent("player_spawn", Event_PlayerSpawn);
+    HookEvent("player_death", Event_ScoreDeath, EventHookMode_Post);
+    HookEvent("player_team", Event_ScoreRoster, EventHookMode_Post);
+    HookEvent("player_disconnect", Event_ScoreRoster, EventHookMode_Post);
+    // keep the match scoreboard permanently on screen (HUD hold 3.2s,
+    // refreshed every 2s + on game events)
+    CreateTimer(2.0, Timer_ScoreRefresh, _, TIMER_REPEAT);
+}
+
+public Action Timer_ScoreRefresh(Handle timer)
+{
+    ShowMatchScore();
+    return Plugin_Continue;
 }
 
 public Action Cmd_TeamVoice(int client, int args)
@@ -66,6 +82,40 @@ public Action Cmd_TeamVoice(int client, int args)
     if (g_iMode == MODE_MATCH)
         SetCvar("sv_alltalk", now ? "0" : "1");
     ReplyToCommand(client, "[Wh1Tes] Match team voice: %s", now ? "ON" : "OFF");
+    return Plugin_Handled;
+}
+
+
+public Action Cmd_BotMode(int args)
+{
+    if (args < 1)
+    {
+        ReplyToCommand(0, "BOTMODE %d %s", g_iMode, g_sModeNames[g_iMode]);
+        return Plugin_Handled;
+    }
+    char arg[32];
+    GetCmdArg(1, arg, sizeof(arg));
+    int idx = -1;
+    if (arg[0] >= '0' && arg[0] <= '6' && arg[1] == '\0')
+        idx = arg[0] - '0';
+    else
+    {
+        for (int i = 0; i < sizeof(g_sModeNames); i++)
+        {
+            if (StrContains(g_sModeNames[i], arg, false) != -1)
+            {
+                idx = i;
+                break;
+            }
+        }
+    }
+    if (idx < 0)
+    {
+        ReplyToCommand(0, "BOTMODE_ERROR unknown mode '%s'", arg);
+        return Plugin_Handled;
+    }
+    ApplyMode(idx);
+    ReplyToCommand(0, "BOTMODE_SET %d %s", idx, g_sModeNames[idx]);
     return Plugin_Handled;
 }
 
@@ -109,6 +159,7 @@ void ResetCommon()
     // defaults every mode starts from
     SetCvar("sv_gravity", "800");
     SetCvar("mp_friendlyfire", "0");
+    SetCvar("mp_forcecamera", "0");
     SetCvar("mp_freezetime", "0");
     SetCvar("sv_alltalk", "1");
     SetCvar("wh1tes_maxmoney", "0");
@@ -117,6 +168,13 @@ void ResetCommon()
 void ApplyMode(int mode)
 {
     g_iMode = mode;
+    g_cvCurMode.IntValue = mode;
+    if (mode != MODE_MATCH)
+        ClearMatchScore();
+    // wipe any screen overlay (medal / scoreboard band) — the kill
+    // overlay plugin re-applies the right texture for the new mode on
+    // the round restart below
+    ClearAllOverlays();
     ResetCommon();
 
     switch (mode)
@@ -132,6 +190,9 @@ void ApplyMode(int mode)
             SetCvar("mp_startmoney", "800");
             SetCvar("mp_freezetime", "6");
             SetCvar("mp_friendlyfire", "1");
+            // anti-ghosting (Ali's call 2026-10-23): dead CT/T can only
+            // spectate their OWN team in Match mode
+            SetCvar("mp_forcecamera", "1");
             SetCvar("mp_maxrounds", "30");
             SetCvar("mp_roundtime", "2");
             SetCvar("mp_c4timer", "35");
@@ -162,6 +223,85 @@ public void Event_RoundStart(Event event, const char[] name, bool dontBroadcast)
     // re-assert gravity for scoutz (in case another plugin/config touched it)
     if (g_iMode == MODE_SCOUTZ)
         SetCvar("sv_gravity", "200");
+    // match scoreboard: show once the round is set up
+    if (g_iMode == MODE_MATCH)
+        CreateTimer(1.0, Timer_ShowMatchScore, _, TIMER_FLAG_NO_MAPCHANGE);
+}
+
+/* ---------- match-mode scoreboard (Ali's call 2026-10-23) ----------
+ * Match mode shows, as a persistent HUD text near the top: alive/total
+ * players per team and rounds won per team. Refreshed every 2s, on
+ * round start, on every death and on roster changes. */
+
+public void Event_ScoreDeath(Event event, const char[] name, bool dontBroadcast)
+{
+    ShowMatchScore();
+}
+
+public void Event_ScoreRoster(Event event, const char[] name, bool dontBroadcast)
+{
+    if (g_iMode == MODE_MATCH)
+        CreateTimer(0.5, Timer_ShowMatchScore, _, TIMER_FLAG_NO_MAPCHANGE);
+}
+
+public Action Timer_ShowMatchScore(Handle timer)
+{
+    ShowMatchScore();
+    return Plugin_Stop;
+}
+
+void ShowMatchScore()
+{
+    if (g_iMode != MODE_MATCH)
+        return;
+    int ctAlive = 0, ctTotal = 0, tAlive = 0, tTotal = 0;
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsClientInGame(i))
+            continue;
+        int team = GetClientTeam(i);
+        if (team == 3)
+        {
+            ctTotal++;
+            if (IsPlayerAlive(i))
+                ctAlive++;
+        }
+        else if (team == 2)
+        {
+            tTotal++;
+            if (IsPlayerAlive(i))
+                tAlive++;
+        }
+    }
+    // HUD text near the top of the screen (Ali's call 2026-10-23: the
+    // center-text version sat too low and faded). Channel 2 — proven
+    // visible on this build by the wh1tes_hudprobe test he confirmed.
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsClientInGame(i) || IsFakeClient(i))
+            continue;
+        SetHudTextParams(-1.0, 0.09, 3.2, 255, 210, 90, 255, 0, 0.0, 0.1, 0.4);
+        ShowHudText(i, 2, "CT %d/%d   |   T %d/%d\nRounds:  CT %d : %d T",
+            ctAlive, ctTotal, tAlive, tTotal, GetTeamScore(3), GetTeamScore(2));
+    }
+}
+
+void ClearMatchScore()
+{
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsClientInGame(i) || IsFakeClient(i))
+            continue;
+        SetHudTextParams(-1.0, 0.09, 0.1, 255, 210, 90, 255, 0, 0.0, 0.0, 0.0);
+        ShowHudText(i, 2, "");
+    }
+}
+
+void ClearAllOverlays()
+{
+    for (int i = 1; i <= MaxClients; i++)
+        if (IsClientInGame(i) && !IsFakeClient(i))
+            ClientCommand(i, "r_screenoverlay \"\"");
 }
 
 /* ---------- spawn loadouts for restricted modes ---------- */
