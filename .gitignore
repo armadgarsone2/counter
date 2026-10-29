@@ -27,3 +27,5 @@ Thumbs.db
 
 # Source pack archives (kept on disk only)
 /server/cso2.zip
+server/cstrike/cfg/server.cfg
+server/cstrike/addons/sourcemod/configs/admins_simple.ini
